@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Patient;
 use App\Models\User;
+use App\Models\Xray;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use PHPUnit\Event\Code\Test;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            Fitness_seeder::class,
+            Clinic_seeder::class,
+            User_seeder::class,
+            Test_seeder::class,
+            Xray_seeder::class,
         ]);
     }
 }
