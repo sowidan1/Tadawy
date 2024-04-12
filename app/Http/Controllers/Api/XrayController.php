@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BookXrayRequest;
 use App\Models\Xray;
-use Illuminate\Http\Request;
 
 class XrayController extends Controller
 {
@@ -30,6 +29,7 @@ class XrayController extends Controller
             'message' => 'Xray fetched successfully',
             'status' => 200
         ];
+
         return $response;
     }
 
@@ -44,6 +44,7 @@ class XrayController extends Controller
             'message' => 'xray booked successfully',
             'status' => 200
         ];
+        
         return $response;
     }
 }

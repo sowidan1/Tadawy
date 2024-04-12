@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone');
             $table->enum('gender', ['male', 'female']);
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->string('specialty');
             $table->integer('year_of_experience');
             $table->date('date_of_birth');

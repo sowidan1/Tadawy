@@ -7,13 +7,13 @@ use App\Http\Requests\BookTestRequest;
 use App\Models\Main_test;
 use App\Models\Ray_test;
 use App\Models\Test;
-use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
     public function index()
     {
         $tests = Ray_test::all();
+
         return response()->json($tests);
     }
 
@@ -39,6 +39,7 @@ class TestController extends Controller
             'message' => 'Test fetched successfully',
             'status' => 200
         ];
+
         return $response;
     }
 
@@ -53,6 +54,7 @@ class TestController extends Controller
             'message' => 'Test booked successfully',
             'status' => 200
         ];
+        
         return $response;
     }
 }

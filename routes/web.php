@@ -1,20 +1,32 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DoctorWebController;
+use App\Http\Controllers\PatientWebController;
+use App\Http\Controllers\TemplateWebController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+
+Route::get('/', function () {
+    return view('master');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::match(['get', 'post'], '/home', [TemplateWebController::class, 'index'])->name('dashpord');
+    Route::get('/addpatient', [TemplateWebController::class,'add_patient'])->name('addpatient');
+    Route::get('/adddoctor', [TemplateWebController::class,'add_doctor'])->name('addDoctor');
+    Route::get('/all-patient', [TemplateWebController::class,'all_patient'])->name('All_Patient');
+    Route::get('/all-doctor', [TemplateWebController::class,'all_doctor'])->name('All_Doctor');
+    Route::post('/patients/delete', [PatientWebController::class, 'delete'])->name('patients.delete');
+    Route::post('/doctors/delete', [DoctorWebController::class, 'delete'])->name('doctors.delete');
+    Route::post('/doctors/store', [DoctorWebController::class, 'store'])->name('doctors.store');
+    Route::post('/patients/store', [PatientWebController::class, 'store'])->name('patients.store');
+
 });
+
+
+ 
+
 
 require __DIR__.'/auth.php';

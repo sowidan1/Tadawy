@@ -12,6 +12,15 @@ class User_seeder extends Seeder
      */
     public function run(): void
     {
+
+        $admin = [
+            'name' => 'Ahmed Mostafa',
+            'email' => 'admin@admin.com',
+            'password' => '123456',
+        ];
+
+        \App\Models\User::create($admin);
+
         
         $Doctors = [
             [
