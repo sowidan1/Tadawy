@@ -105,15 +105,12 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item active">
-                        <a href="{{ route('dashpord') }}" class="menu-link">
+                        <a href="{{ route('dashboard') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
                     </li>
                     <li class="menu-item ">
-                        {{-- i need pass token here --}}
-
-
                         <a href="{{ route('addDoctor') }}" class="menu-link">
                             <div data-i18n="Account">Add Doctor</div>
                         </a>
@@ -125,16 +122,15 @@
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('All_Patient') }}" class="menu-link">
-                            <div data-i18n="Account">Patients</div>
+                            <div data-i18n="Account">Patients Details</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="{{ route('All_Doctor') }}" class="menu-link">
-                            <div data-i18n="Account">Doctors</div>
+                            <div data-i18n="Account">Doctors Details</div>
                         </a>
                     </li>
-
                     <!-- <i class="menu-icon tf-icons bx bx-file"></i> -->
                     <div data-i18n="Documentation"></div>
                     </a>
@@ -216,7 +212,7 @@
                                                             </div>
                                                         </div>
                                                         <span class="fw-semibold d-block mb-1">Total Doctor</span>
-                                                        <h3 class="card-title mb-2">+400</h3>
+                                                        <h3 class="card-title mb-2">{{ $allDoctors }}</h3>
                                                         
                                                     </div>
                                                 </div>
@@ -250,7 +246,7 @@
                                                             </div>
                                                         </div>
                                                         <span class="fw-semibold d-block mb-1">Total Patient</span>
-                                                        <h3 class="card-title mb-2">+400</h3>
+                                                        <h3 class="card-title mb-2">{{ $allPatients }}</h3>
                                                        
                                                     </div>
                                                 </div>
@@ -434,144 +430,44 @@
                                     </div>
                                     <div class="card-body">
                                         <ul class="p-0 m-0">
+                                            @foreach ($allClinics as $clinic)
                                             <li class="d-flex mb-4 pb-1">
                                                 <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('assets/img/icons/unicons/pharmacy.png') }}"
+                                                    <img src="{{ $clinic->photo }}"
                                                         alt="User" class="rounded" />
                                                 </div>
                                                 <div
                                                     class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                     <div class="me-2">
-                                                        <small class="text-muted d-block mb-1">Department of
-                                                            internal</small>
-                                                        <h6 class="mb-0">DR / Ahmed Elnagaar</h6>
-
+                                                        <small class="mb-0">{{ $clinic->name }}</small>
                                                     </div>
                                                     <div class="user-progress d-flex align-items-center gap-1">
-
-                                                        <span class="badge bg-label-warning rounded-pill">
-                                                            <h6 class="mb-0">15</h6>
+                                                        <span class="badge bg-label-warning">
+                                                            <small class="mb-0">55 Doctor</small>
                                                         </span>
-
+                                                        <span class="badge bg-label-warning ">
+                                                            <small class="mb-0">15 Patient</small>
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <!--  2 -->
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('assets/img/icons/unicons/clinic (1).png') }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <small class="text-muted d-block mb-1">Dental Clinic</small>
-                                                        <h6 class="mb-0">DR / Osama Mohammed</h6>
-
-                                                    </div>
-                                                    <div class="user-progress d-flex align-items-center gap-1">
-
-                                                        <span class="badge bg-label-warning rounded-pill">
-                                                            <h6 class="mb-0">12</h6>
-                                                        </span>
-
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!--  3   -->
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('assets/img/icons/unicons/heart.png') }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <small class="text-muted d-block mb-1">Heart Clinic</small>
-                                                        <h6 class="mb-0">DR / Rokia Darwish</h6>
-
-                                                    </div>
-                                                    <div class="user-progress d-flex align-items-center gap-1">
-
-                                                        <span class="badge bg-label-warning rounded-pill">
-                                                            <h6 class="mb-0">25</h6>
-                                                        </span>
-
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!--   4   -->
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('assets/img/icons/unicons/broken-leg.png') }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <small class="text-muted d-block mb-1">Orthopedic
-                                                            Clinic</small>
-                                                        <h6 class="mb-0">DR / Mohammed Adel</h6>
-
-                                                    </div>
-                                                    <div class="user-progress d-flex align-items-center gap-1">
-
-                                                        <span class="badge bg-label-warning rounded-pill">
-                                                            <h6 class="mb-0">15</h6>
-                                                        </span>
-
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!--    5 -->
-
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('assets/img/icons/unicons/beauty.png') }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <small class="text-muted d-block mb-1">Beauty Clinic</small>
-                                                        <h6 class="mb-0">DR Mohammed Hany</h6>
-
-                                                    </div>
-                                                    <div class="user-progress d-flex align-items-center gap-1">
-
-                                                        <span class="badge bg-label-warning rounded-pill">
-                                                            <h6 class="mb-0">15</h6>
-                                                        </span>
-
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!--   6  -->
-
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('assets/img/icons/unicons/newborn.png') }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <small class="text-muted d-block mb-1">Childrens Clinic</small>
-                                                        <h6 class="mb-0">DR / Mostafa Mahmoud</h6>
-
-                                                    </div>
-                                                    <div class="user-progress d-flex align-items-center gap-1">
-
-                                                        <span class="badge bg-label-warning rounded-pill">
-                                                            <h6 class="mb-0">15</h6>
-                                                        </span>
-
-                                                    </div>
-                                                </div>
-                                            </li>
-
-
+                                            @endforeach
                                         </ul>
+                                    </div>
+                                    <div class="pagination mt-3" style="display: flex; justify-content: center;">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination">
+                                                <li class="page-item {{ $allClinics->previousPageUrl() ? '' : 'disabled' }}">
+                                                    <a class="page-link" href="{{ $allClinics->previousPageUrl() }}" tabindex="-1" aria-disabled="true">Previous</a>
+                                                </li>
+                                                @foreach ($allClinics->getUrlRange(1, $allClinics->lastPage()) as $page => $url)
+                                                    <li class="page-item {{ $page == $allClinics->currentPage() ? 'active' : '' }}"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                                                @endforeach
+                                                <li class="page-item {{ $allClinics->nextPageUrl() ? '' : 'disabled' }}">
+                                                    <a class="page-link" href="{{ $allClinics->nextPageUrl() }}">Next</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
                                     </div>
                                 </div>
                             </div>

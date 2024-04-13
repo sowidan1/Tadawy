@@ -105,7 +105,7 @@
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
                     <li class="menu-item active">
-                        <a href="{{ route('dashpord') }}" class="menu-link">
+                        <a href="{{ route('dashboard') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-home-circle"></i>
                             <div data-i18n="Analytics">Dashboard</div>
                         </a>
@@ -122,13 +122,13 @@
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('All_Patient') }}" class="menu-link">
-                            <div data-i18n="Account">Patients</div>
+                            <div data-i18n="Account">Patients Details</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="{{ route('All_Doctor') }}" class="menu-link">
-                            <div data-i18n="Account">Doctors</div>
+                            <div data-i18n="Account">Doctors Details</div>
                         </a>
                     </li>
                     <!-- <i class="menu-icon tf-icons bx bx-file"></i> -->
@@ -272,7 +272,23 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                       
                                     </div>
+                                </div>
+                                <div class="pagination mt-3" style="display: flex; justify-content: center;">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item {{ $patients->previousPageUrl() ? '' : 'disabled' }}">
+                                                <a class="page-link" href="{{ $patients->previousPageUrl() }}" tabindex="-1" aria-disabled="true">Previous</a>
+                                            </li>
+                                            @foreach ($patients->getUrlRange(1, $patients->lastPage()) as $page => $url)
+                                                <li class="page-item {{ $page == $patients->currentPage() ? 'active' : '' }}"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                                            @endforeach
+                                            <li class="page-item {{ $patients->nextPageUrl() ? '' : 'disabled' }}">
+                                                <a class="page-link" href="{{ $patients->nextPageUrl() }}">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                                 <!--/ Striped Rows -->
                             </div>
