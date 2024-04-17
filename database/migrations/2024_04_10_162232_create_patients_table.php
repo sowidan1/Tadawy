@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->id();
+            // need genrated id
+            $table->id()->random_int(1000, 9999);
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
@@ -24,6 +25,8 @@ return new class extends Migration
             $table->date('date_of_birth')->nullable();
             $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctors');
+            $table->unsignedBigInteger('clinic_id');
+            $table->foreign('clinic_id')->references('id')->on('clinics');
             $table->timestamps();
         });
     }
