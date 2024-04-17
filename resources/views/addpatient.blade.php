@@ -316,6 +316,18 @@
                                                         class="form-control">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
+                                                    <label for="clinic" class="form-label">clinic</label>
+                                                    <select id="clinic" class="select2 form-select" name="clinic"
+                                                        required>
+                                                        <option value="">Select Clinic</option>
+                                                        <!-- Populate options dynamically based on clinics in your database -->
+                                                        @foreach ($clinics as $clinic)
+                                                            <option value="{{ $clinic->id }}">{{ $clinic->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
                                                     <label for="doctor_id" class="form-label">clinic</label>
                                                     <select id="doctor_id" class="select2 form-select" name="doctor_id"
                                                         required>
