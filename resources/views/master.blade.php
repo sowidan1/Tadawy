@@ -1,3 +1,7 @@
+<?php 
+use App\Models\Doctor;
+use App\Models\Patient;
+?>
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
@@ -442,11 +446,11 @@
                                                         <small class="mb-0">{{ $clinic->name }}</small>
                                                     </div>
                                                     <div class="user-progress d-flex align-items-center gap-1">
-                                                        <span class="badge bg-label-warning">
-                                                            <small class="mb-0">55 Doctor</small>
+                                                        <span class="badge bg-label-primary">
+                                                            <small class="mb-0">{{ Doctor::where("clinic_id",$clinic->id)->count() }} Doctor's</small>
                                                         </span>
-                                                        <span class="badge bg-label-warning ">
-                                                            <small class="mb-0">15 Patient</small>
+                                                        <span class="badge bg-label-primary ">
+                                                            <small class="mb-0">{{ Patient::where("clinic_id",$clinic->id)->count() }} Patient's</small>
                                                         </span>
                                                     </div>
                                                 </div>

@@ -24,6 +24,8 @@ return new class extends Migration
             $table->date('date_of_birth')->nullable();
             $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctors');
+            $table->unsignedBigInteger('clinic_id');
+            $table->foreign('clinic_id')->references('id')->on('clinics');
             $table->timestamps();
         });
     }

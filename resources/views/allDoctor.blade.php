@@ -1,3 +1,6 @@
+<?php
+use App\Models\Patient;
+?>
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
@@ -236,11 +239,9 @@
                                                     <th>Doctor Name</th>
                                                     <th>Email</th>
                                                     <th>Phone</th>
-                                                    {{-- <th>Gender</th> --}}
-                                                    <th>Date Of Birth</th>
+                                                    <th>Number Of Patient</th>
                                                     <th>Specialty</th>
                                                     <th>Clinic Name</th>
-                                                    {{-- <th>Year Of Experience</th> --}}
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -253,7 +254,12 @@
                                                         </td>
                                                         <td>{{ $doctor->email }}</td>
                                                         <td>{{ $doctor->phone }}</td>
-                                                        <td>{{ $doctor->date_of_birth }}</td>
+                                                        <td>
+                                                            <form action=""
+                                                            <input type="hidden" name="count_patient">
+                                                        <button class="btn rounded-pill btn-primary">Have {{ Patient::where("doctor_id",$doctor->id)->count() }} Patient's</button>
+                                                        </form>
+                                                        </td>
                                                         <td>{{ $doctor->specialty }}</td>
                                                         <td>{{ App\Models\Clinic::findOrFail($doctor->clinic_id)->name }}</td>
                                                         <td>
