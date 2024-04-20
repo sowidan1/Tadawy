@@ -9,5 +9,5 @@ class Ehr extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['patient_id', 'data', 'path'];
+    protected $fillable = ['patient_id', 'name', 'path'];
 }
