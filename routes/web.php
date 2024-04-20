@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TemplateWebController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+    Route::group(['middleware'=>['auth:sanctum','limit.request']],function(){
 
     Route::match(['get', 'post'], '/home', [TemplateWebController::class, 'index'])->name('dashpord');
     Route::get('/addpatient', [TemplateWebController::class,'add_patient'])->name('addpatient');
