@@ -2,24 +2,34 @@
 
 namespace App\Models;
 
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
-    use HasFactory,HasApiTokens;
+    use HasFactory, HasApiTokens;
 
-    protected $fillable =[
+    public $incrementing = false;
+
+    protected $fillable = [
         'name',
         'email',
         'password',
         'gender',
         'photo',
         'phone',
-        'emergency_contact',
-        'medical_history',
         'date_of_birth',
-        'doctor_id'
+        'doctor_id',
+        'clinic_id',
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+        self::creating(function ($model) {
+            $model->id = IdGenerator::generate(['table' => 'patients', 'length' => 8, 'prefix' => date('ym')]);
+        });
+    }
 }

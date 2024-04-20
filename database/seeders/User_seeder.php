@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -637,9 +638,9 @@ class User_seeder extends Seeder
 
         }
 
+        $id = IdGenerator::generate(['table' => 'patients', 'length' => 8, 'prefix' => date('ym')]);
+
         $patients = [
-            'medical_history' => 'No medical history',
-            'emergency_contact'=> 'No emergency contact',
             'name'=> 'hana tarek',
             'phone'=> '01014567890',
             'date_of_birth' => '1990-01-01',
@@ -649,6 +650,7 @@ class User_seeder extends Seeder
             'photo'=> 'images/patient.png',
             'doctor_id'=> '6',
             'clinic_id'=> '1',
+            'id'=> $id,
             ];
 
         \App\Models\Patient::create($patients);

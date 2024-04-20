@@ -141,7 +141,6 @@
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
-
                 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -156,62 +155,8 @@
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
                             <li class="nav-item lh-1 me-3">
-                                <a>Osama</a>
+                                <a class="text-primary">Admin : {{ Auth::user()->name }}</a>
                             </li>
-
-                            <!-- User -->
-                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                    data-bs-toggle="dropdown">
-                                    <div class="avatar avatar-online">
-                                        <img src="{{ asset('assets/img/icons/unicons/doctor.png') }}" alt
-                                            class="w-px-40 h-auto rounded-circle" />
-                                    </div>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <div class="avatar avatar-online">
-                                                        <img src="{{ asset('assets/img/avatars/1.png') }}" alt
-                                                            class="w-px-40 h-auto rounded-circle" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">Mohammed Sameh</span>
-                                                    <small class="text-muted">Admin</small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-user me-2"></i>
-                                            <span class="align-middle">My Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-cog me-2"></i>
-                                            <span class="align-middle">Settings</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="auth-login-basic.html">
-                                            <i class="bx bx-power-off me-2"></i>
-                                            <span class="align-middle">Log Out</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!--/ User -->
                         </ul>
                     </div>
                 </nav>
@@ -232,29 +177,10 @@
                                     </li>
                                 </ul>
                                 <div class="card mb-4">
-                                    <h5 class="card-header">Profile Details</h5>
-                                    <!-- Account -->
-                                    <form id="formAccountSettings" method="POST" action="{{ route('doctors.store') }}" novalidate>
+                                    <form id="formAccountSettings" method="POST"
+                                        action="{{ route('doctors.store') }}" novalidate>
                                         @csrf
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-start align-items-sm-center gap-4">
-                                                <img src="{{ asset('assets/img/icons/unicons/doctor.png')}}" alt="user-avatar"
-                                                    class="d-block rounded" height="100" width="100"
-                                                    id="uploadedAvatar" />
-                                                <div class="button-wrapper">
-                                                    <label for="upload" class="btn btn-primary me-2 mb-4"
-                                                        tabindex="0">
-                                                        <span class="d-none d-sm-block">Upload new photo</span>
-                                                        <i class="bx bx-upload d-block d-sm-none"></i>
-                                                        <input type="file" id="upload" name="photo"
-                                                            class="account-file-input" hidden
-                                                            accept="image/png, image/jpeg" />
-                                                    </label>
-                                                    <p class="text-muted mb-0">Allowed JPG, PNG. Max size 800K</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr class="my-0" />
+
                                         <div class="card-body">
 
                                             <div class="row">
@@ -316,7 +242,6 @@
                                                     <select id="clinic" class="select2 form-select" name="clinic"
                                                         required>
                                                         <option value="">Select Clinic</option>
-                                                        <!-- Populate options dynamically based on clinics in your database -->
                                                         @foreach ($clinics as $clinic)
                                                             <option value="{{ $clinic->id }}">{{ $clinic->name }}
                                                             </option>
@@ -342,9 +267,9 @@
                                         </div>
                                     @endif
                                     @if (session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                    </div>
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
                                     @endif
                                 </div>
 
@@ -385,21 +310,21 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="{{ asset('assets/vendor/libs/jquery/jquery.js')}}"></script>
-    <script src="{{ asset('assets/vendor/libs/popper/popper.js')}}"></script>
-    <script src="{{ asset('assets/vendor/js/bootstrap.js')}}"></script>
-    <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+    <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
+    <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
-    <script src="{{ asset('assets/vendor/js/menu.js')}}"></script>
+    <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="{{ asset('assets/js/main.js')}}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <!-- Page JS -->
-    <script src="{{ asset('assets/js/pages-account-settings-account.js')}}"></script>
+    <script src="{{ asset('assets/js/pages-account-settings-account.js') }}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

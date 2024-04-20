@@ -156,62 +156,8 @@
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
                             <li class="nav-item lh-1 me-3">
-                                <a>Osama</a>
+                                <a class="text-primary">Admin : {{ Auth::user()->name }}</a>
                             </li>
-
-                            <!-- User -->
-                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                    data-bs-toggle="dropdown">
-                                    <div class="avatar avatar-online">
-                                        <img src="{{ asset('assets/img/icons/unicons/doctor.png') }}" alt
-                                            class="w-px-40 h-auto rounded-circle" />
-                                    </div>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <div class="avatar avatar-online">
-                                                        <img src="{{ asset('assets/img/avatars/1.png') }}" alt
-                                                            class="w-px-40 h-auto rounded-circle" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">Mohammed Sameh</span>
-                                                    <small class="text-muted">Admin</small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-user me-2"></i>
-                                            <span class="align-middle">My Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-cog me-2"></i>
-                                            <span class="align-middle">Settings</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="auth-login-basic.html">
-                                            <i class="bx bx-power-off me-2"></i>
-                                            <span class="align-middle">Log Out</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!--/ User -->
                         </ul>
                     </div>
                 </nav>
@@ -238,8 +184,8 @@
                                                     <th>Phone</th>
                                                     <th>Gender</th>
                                                     <th>Date Of Birth</th>
-                                                    <th>Medical History</th>
-                                                    <th>Emergency Contact</th>
+                                                    <th>Clinic Name</th>
+                                                    <td>Doctor Name</td>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -247,17 +193,18 @@
                                                 @foreach ($patients as $patient)
                                                     <tr>
                                                         <td>{{ $patient->id }}</td>
-                                                        <td><i class="fab fa-angular fa-lg text-danger "></i>
-                                                            <strong>{{ $patient->name }}</strong>
-                                                        </td>
+                                                        <td> <i class="fab fa-angular fa-lg text-danger "> </i>
+                                                            <strong>{{ $patient->name }}</strong> </td>
                                                         <td>{{ $patient->email }}</td>
                                                         <td>{{ $patient->phone }}</td>
-                                                        <td><span
+                                                        <td> <span
                                                                 class="badge bg-label-primary me-1">{{ $patient->gender }}</span>
                                                         </td>
                                                         <td>{{ $patient->date_of_birth }}</td>
-                                                        <td>{{ $patient->medical_history }}</td>
-                                                        <td>{{ $patient->emergency_contact }}</td>
+                                                        <td>{{ App\Models\Clinic::findOrFail($patient->clinic_id)->name }}
+                                                        </td>
+                                                        <td>{{ App\Models\Doctor::findOrFail($patient->doctor_id)->name }}
+                                                        </td>
                                                         <td>
                                                             <form action="{{ route('patients.delete') }}"
                                                                 method="post">
@@ -272,17 +219,22 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
-                                       
+
                                     </div>
                                 </div>
                                 <div class="pagination mt-3" style="display: flex; justify-content: center;">
                                     <nav aria-label="Page navigation">
                                         <ul class="pagination">
-                                            <li class="page-item {{ $patients->previousPageUrl() ? '' : 'disabled' }}">
-                                                <a class="page-link" href="{{ $patients->previousPageUrl() }}" tabindex="-1" aria-disabled="true">Previous</a>
+                                            <li
+                                                class="page-item {{ $patients->previousPageUrl() ? '' : 'disabled' }}">
+                                                <a class="page-link" href="{{ $patients->previousPageUrl() }}"
+                                                    tabindex="-1" aria-disabled="true">Previous</a>
                                             </li>
                                             @foreach ($patients->getUrlRange(1, $patients->lastPage()) as $page => $url)
-                                                <li class="page-item {{ $page == $patients->currentPage() ? 'active' : '' }}"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                                                <li
+                                                    class="page-item {{ $page == $patients->currentPage() ? 'active' : '' }}">
+                                                    <a class="page-link"
+                                                        href="{{ $url }}">{{ $page }}</a></li>
                                             @endforeach
                                             <li class="page-item {{ $patients->nextPageUrl() ? '' : 'disabled' }}">
                                                 <a class="page-link" href="{{ $patients->nextPageUrl() }}">Next</a>

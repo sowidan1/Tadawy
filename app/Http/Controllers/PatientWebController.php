@@ -2,28 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use App\Http\Requests\StorePatientRequest;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class PatientWebController extends Controller
 {
-    
+
     public function store(StorePatientRequest $request)
     {
         $request->validated();
 
+        $id = IdGenerator::generate(['table' => 'patients', 'length' => 8, 'prefix' => date('ym')]);
+
         Patient::create([
-            'name' => $request->input('Full_Name'),
+            'id' => $id,
+            'name' => $request->Full_Name,
             'photo  ' => $request->photo,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => encrypt($request->password),
             'phone' => $request->phoneNumber,
-            'medical_history' => $request->medical_history,
-            'emergency_contact' => $request->emergency_contact,
             'date_of_birth' => $request->date_of_birth,
             'gender' => $request->gender,
             'doctor_id' => $request->doctor_id,
+            'clinic_id' => $request->clinic_id,
         ]);
 
         return redirect()->back()->with('success', 'Your form has been submitted successfully!');
@@ -40,7 +43,7 @@ class PatientWebController extends Controller
         $patient = Patient::findOrFail($patientId);
 
         $patient->delete();
-        
+
         return redirect()->back()->with('success', 'Patient deleted successfully.');
     }
 }

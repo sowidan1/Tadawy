@@ -20,8 +20,8 @@ class DoctorWebController extends Controller
         Doctor::create([
             'name' => $request->input('Full_Name'),
             'email' => $request->input('email'),
-            'photo' => $request->input('photo'), // Default photo for new doctors
-            'password' => bcrypt($request->input('password')), // Hash the password
+            'photo' => $request->input('photo'), 
+            'password' => bcrypt($request->input('password')), 
             'phone' => $request->input('phoneNumber'),
             'specialty' => $request->input('specialty'),
             'year_of_experience' => $request->input('year_of_experience'),
