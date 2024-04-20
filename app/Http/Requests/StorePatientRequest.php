@@ -27,11 +27,10 @@ class StorePatientRequest extends FormRequest
             'email' => 'required|email|unique:patients,email',
             'password' => 'required|string',
             'phoneNumber' => 'required|string',
-            'medical_history' => 'string',
-            'emergency_contact' => 'required|string',
             'gender' => 'required|in:male,female',
             'date_of_birth' => 'required|date',
-            'doctor_id' => 'required|exists:doctors,id'
+            'doctor_id' => 'required|exists:doctors,id',
+            'clinic_id' => 'required|exists:clinics,id',
         ];
     }
 }

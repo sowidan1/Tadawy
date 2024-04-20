@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BookXrayRequest;
+use App\Models\Book_xray;
 use App\Models\Xray;
 
 class XrayController extends Controller
@@ -37,7 +38,7 @@ class XrayController extends Controller
     {
         $data = $request->validated();
 
-        $book = Xray::create($data);
+        $book = Book_xray::create($data);
 
         $response = [
             'book' => $book,

@@ -26,9 +26,11 @@ class TemplateWebController extends Controller
 
     public function add_patient(){
 
+        $clinics = Clinic::all();
+
         $doctors = Doctor::all();
 
-        return view('addpatient',compact('doctors'));
+        return view('addpatient',compact('doctors','clinics'));
     }
 
     public function all_patient(){

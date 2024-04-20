@@ -19,8 +19,6 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->string('photo')->nullable();
             $table->string('phone');
-            $table->string('emergency_contact')->nullable();
-            $table->text('medical_history')->nullable();
             $table->date('date_of_birth')->nullable();
             $table->unsignedBigInteger('doctor_id');
             $table->foreign('doctor_id')->references('id')->on('doctors');

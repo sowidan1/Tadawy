@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BookTestRequest;
+use App\Models\Book_test;
 use App\Models\Main_test;
 use App\Models\Ray_test;
 use App\Models\Test;
@@ -47,7 +48,7 @@ class TestController extends Controller
     {
         $data = $request->validated();
 
-        $book = Test::create($data);
+        $book = Book_test::create($data);
 
         $response = [
             'book' => $book,
