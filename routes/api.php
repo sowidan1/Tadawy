@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ClinicController;
 use App\Http\Controllers\Api\DoctorController;
+use App\Http\Controllers\Api\EhrController;
 use App\Http\Controllers\Api\FitController;
 use App\Http\Controllers\Api\InfantController;
 use App\Http\Controllers\Api\TestController;
@@ -54,5 +55,12 @@ Route::prefix('xray')->group(function () {
 
 Route::post('/Infant',[InfantController::class,'store']);
 
+Route::prefix('EHR')->group(function () {
+
+    Route::post('/store', [EhrController::class, 'store']);
+    Route::get('/show/{id}', [EhrController::class, 'download']);
+    Route::get('/all/{patient_id}', [EhrController::class, 'showEhrByPatientId']);
+
+}); 
 
 });

@@ -11,20 +11,38 @@ class EhrController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            
-        'file' => 'required|file|max:1024',
-        'accepted'
-    ]);
+            'patient_id' => 'required|exists:patients,id',
+            'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
+        ]);
 
-    $file = $request->file('file')->store('ehr');
+        $data = $request->file('data')->store('ehr');
 
-    $file = Ehr::create([
-        'name' => $request->file('file')->getClientOriginalName(),
-        'path' => $file,
-    ]);
+        $file = Ehr::create([
+            'name' => $request->file('data')->getClientOriginalName(),
+            'path' => $data,
+            'patient_id' => $request->patient_id,
+        ]);
 
-    return response()->json([
-        'path' => $file
-    ]);
+        $response = [
+            'message' => 'EHR created',
+            'data' => $file,
+        ];
+
+        return response($response, 201);
+    }
+
+    public function download($id)
+    {
+        $file = Ehr::findOrFail($id);
+
+        return response()->download(storage_path('app/' . $file->path));
+    }
+
+    public function showEhrByPatientId($patient_id)
+    {
+        $ehr = Ehr::where('patient_id', $patient_id)->get();
+
+        return response()->json($ehr);
+        
     }
 }

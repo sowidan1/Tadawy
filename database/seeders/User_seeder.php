@@ -648,7 +648,7 @@ class User_seeder extends Seeder
             'email'=> 'hana@patient.com',
             'photo'=> 'images/patient.png',
             'doctor_id'=> '6',
-            // 'clinic_id'=> '1',
+            'clinic_id'=> '1',
             ];
 
         \App\Models\Patient::create($patients);
