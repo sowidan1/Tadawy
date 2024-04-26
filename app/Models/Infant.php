@@ -12,8 +12,6 @@ class Infant extends Model
     protected $fillable = [
         'Temperature',
         'Humidity',
-        'Weight',
-        'Heart_Rate',
         'Color_Sensor',
     ];
 }
