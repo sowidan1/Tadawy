@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use App\Http\Requests\StorePatientRequest;
+use App\Models\Clinic;
+use App\Models\Doctor;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 
@@ -45,5 +47,13 @@ class PatientWebController extends Controller
         $patient->delete();
 
         return redirect()->back()->with('success', 'Patient deleted successfully.');
+    }
+
+    public function show(Request $request , $doctor_id)
+    {
+
+        $patients = Patient::where('doctor_id', $doctor_id)->paginate(10);
+
+        return view('patient', compact('patients'));
     }
 }

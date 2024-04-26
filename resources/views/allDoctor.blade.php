@@ -201,8 +201,8 @@ use App\Models\Patient;
                                                         <td>{{ $doctor->email }}</td>
                                                         <td>{{ $doctor->phone }}</td>
                                                         <td>
-                                                            <form action="" <input type="hidden"
-                                                                name="count_patient">
+                                                            <form action="{{ route('patients.show', ['doctor_id' => $doctor->id]) }}" method="GET">
+                                                                <input type="hidden" name="count_patient">
                                                                 <button class="btn rounded-pill btn-primary">Have
                                                                     {{ Patient::where('doctor_id', $doctor->id)->count() }}
                                                                     Patient's</button>
@@ -215,8 +215,7 @@ use App\Models\Patient;
                                                             <form action="{{ route('doctors.delete') }}"
                                                                 method="post">
                                                                 @csrf
-                                                                <input type="hidden" name="doctor_id"
-                                                                    value="{{ $doctor->id }}">
+                                                                <input type="hidden" name="doctor_id" value="{{ $doctor->id }}">
                                                                 <button type="submit"
                                                                     class="btn rounded-pill btn-danger">Delete</button>
                                                             </form>
