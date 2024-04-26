@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ClinicController;
+use App\Http\Controllers\Api\CommunityController;
 use App\Http\Controllers\Api\DoctorController;
 use App\Http\Controllers\Api\EhrController;
 use App\Http\Controllers\Api\FitController;
@@ -60,5 +61,14 @@ Route::group(['middleware' => ['auth:sanctum', 'limit.request']], function () {
         Route::post('/store', [EhrController::class, 'store']);
         Route::get('/show/{id}', [EhrController::class, 'download']);
         Route::get('/all/{patient_id}', [EhrController::class, 'showEhrByPatientId']);
+    });
+
+    Route::prefix('community')->group(function () {
+        Route::post('/question/store', [CommunityController::class, 'storeQuestion']);
+        Route::get('/question/notAnswerd', [CommunityController::class, 'showNotAnswerQuestions']);
+        Route::get('/question/notAnswerd/{id}', [CommunityController::class, 'showQuestion']);
+        Route::put('/answer/store/{id}', [CommunityController::class, 'answer']);
+        Route::get('/question/Answerd', [CommunityController::class, 'AnsweredQuestions']);
+
     });
 });
