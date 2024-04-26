@@ -209,8 +209,7 @@ use App\Models\Patient;
                                                                     <i class="bx bx-dots-vertical-rounded"></i>
                                                                 </button>
                                                                 <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                                                                    <a class="dropdown-item" href="javascript:void(0);">View
-                                                                        More</a>
+                                                                    <a class="dropdown-item" href="{{ route('All_Doctor') }}">All Doctors</a>
                                                                     
                                                                 </div>
                                                             </div>
@@ -243,8 +242,7 @@ use App\Models\Patient;
                                                                     <i class="bx bx-dots-vertical-rounded"></i>
                                                                 </button>
                                                                 <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                                                                    <a class="dropdown-item" href="javascript:void(0);">View
-                                                                        More</a>
+                                                                    <a class="dropdown-item" href="{{ route('All_Patient') }}">All Patients</a>
                                                                     
                                                                 </div>
                                                             </div>

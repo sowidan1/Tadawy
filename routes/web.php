@@ -20,7 +20,7 @@ Route::get('/', [TemplateWebController::class, 'index'])->middleware(['auth', 'v
     Route::post('/doctors/delete', [DoctorWebController::class, 'delete'])->name('doctors.delete');
     Route::post('/doctors/store', [DoctorWebController::class, 'store'])->name('doctors.store');
     Route::post('/patients/store', [PatientWebController::class, 'store'])->name('patients.store');
-
+    Route::get('/patient/{doctor_id}', [PatientWebController::class, 'show'])->name('patients.show');
 });
 
 

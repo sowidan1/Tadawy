@@ -173,7 +173,7 @@
                             <div class="col-md-12">
                                 <!-- Striped Rows -->
                                 <div class="card">
-                                    <h5 class="card-header">All Patient</h5>
+                                    <h5 class="card-header">Patient</h5>
                                     <div class="table-responsive text-nowrap">
                                         <table class="table table-striped">
                                             <thead>
