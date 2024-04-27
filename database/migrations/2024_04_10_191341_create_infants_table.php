@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('humidity');
             $table->string('heart_Rate');
             $table->enum('color_sensor', ['Jaundice', 'Not_jaundice']);
+
             $table->timestamps();
         });
     }
