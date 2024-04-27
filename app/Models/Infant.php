@@ -10,10 +10,9 @@ class Infant extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Temperature',
-        'Humidity',
-        'Weight',
-        'Heart_Rate',
-        'Color_Sensor',
+        'temperature',
+        'humidity',
+        'heart_Rate',
+        'color_sensor',
     ];
 }
