@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('infants', function (Blueprint $table) {
             $table->id();
-            $table->float('Temperature',2,2);
-            $table->float('Humidity',2,2);
-            $table->enum('Color_Sensor', ['Jaundice', 'Not_Jaundice']);
+            $table->string('temperature');
+            $table->string('humidity');
+            $table->string('heart_Rate');
+            $table->enum('color_sensor', ['Jaundice', 'Not_jaundice']);
+
             $table->timestamps();
         });
     }
