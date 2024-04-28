@@ -19,6 +19,8 @@ Route::prefix('patient')->group(function () {
     Route::post('/login', [AuthController::class, 'patientLogin']);
 });
 
+Route::post('/infant', [InfantController::class, 'store']);
+
 Route::group(['middleware' => ['auth:sanctum', 'limit.request']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
@@ -54,7 +56,7 @@ Route::group(['middleware' => ['auth:sanctum', 'limit.request']], function () {
         Route::post('/book', [XrayController::class, 'bookXray']);
     });
 
-    Route::post('/infant', [InfantController::class, 'store']);
+   
 
     Route::prefix('EHR')->group(function () {
 
