@@ -11,10 +11,10 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Vite-generated CSS -->
-    <link rel="stylesheet" href="/dist/css/app.css">
+    <link rel="stylesheet" href="https://tadawy-production.up.railway.app/dist/css/app.css">
 
     <!-- Vite-generated JavaScript -->
-    <script type="module" src="/dist/js/app.js"></script>
+    <script type="module" src="https://tadawy-production.up.railway.app/dist/js/app.js"></script>
 </head>
 <body class="font-sans text-gray-900 antialiased">
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
