@@ -199,7 +199,7 @@ use App\Models\Patient;
                                                         <div
                                                             class="card-title d-flex align-items-start justify-content-between">
                                                             <div class="avatar flex-shrink-0">
-                                                                <img src="{{ asset('img/icons/unicons/doctor.png') }}"
+                                                                <img src="{{ asset('https://tadawy-production.up.railway.app/assets/سسثفسimg/icons/unicons/doctor.png') }}"
                                                                     alt="Credit Card" class="rounded" />
                                                             </div>
                                                             <div class="dropdown">
