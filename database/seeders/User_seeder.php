@@ -66,7 +66,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'brain and nerves',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 1,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -77,7 +77,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'brain and nerves',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 1,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -121,7 +121,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'skin canser',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 2,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -132,7 +132,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'skin canser',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 2,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -176,7 +176,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'dental',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 3,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -187,7 +187,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'dental',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 3,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -231,7 +231,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'heart and vascular disarases',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 4,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -242,7 +242,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'heart and vascular disarases',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 4,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -286,7 +286,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'infant incubator',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 5,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -297,7 +297,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'infant incubator',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 5,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -341,7 +341,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'breast cancer',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 6,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -352,7 +352,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'breast cancer',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 6,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -396,7 +396,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'nose, ear and throat',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 7,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -407,7 +407,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'nose, ear and throat',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 7,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -451,7 +451,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'eyes',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 8,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -462,7 +462,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'eyes',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 8,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -506,7 +506,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'bones',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' =>9,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -517,7 +517,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'bones',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' =>9,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -561,7 +561,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'emergencies',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' =>10,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -572,7 +572,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'emergencies',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' =>10,
             ],[
                 'name' => 'Dr. Mohammed Adel',
@@ -616,7 +616,7 @@ class User_seeder extends Seeder
                 'phone' => '01014785236',
                 'specialty' => 'obstetrics and gynecology',
                 'year_of_experience' => '8',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 11,
             ],[
                 'name' => 'Dr. fatima Adel',
@@ -627,7 +627,7 @@ class User_seeder extends Seeder
                 'phone' => '01014775236',
                 'specialty' => 'obstetrics and gynecology',
                 'year_of_experience' => '5',
-                'photo' => 'images/doctor-female.png',
+                'photo' => 'images/doctor_female.png',
                 'clinic_id' => 11,
             ],
         ];
