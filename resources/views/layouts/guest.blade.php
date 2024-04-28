@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/css/theme-default.css') }}"
         class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/css/demo.css') }}" />
+    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/dist/css/app.css') }}"/>
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
@@ -28,15 +29,13 @@
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/js/helpers.js') }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('https://tadawy-production.up.railway.app/assets/js/config.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/dist/css/app.css') }}">
 
     <!-- Vite-generated JavaScript -->
-    <script type="module" src="{{ asset('https://tadawy-production.up.railway.app/dist/js/app.js') }}"></script>
+    {{-- <script type="module" src="{{ asset('https://tadawy-production.up.railway.app/dist/js/app.js') }}"></script> --}}
 </head>
 <body class="font-sans text-gray-900 antialiased">
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
@@ -56,6 +55,9 @@
     <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
     <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/js/menu.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/js/helpers.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/dist/js/app.js') }}"></script>
+
     <!-- endbuild -->
 
     <!-- Vendors JS -->
