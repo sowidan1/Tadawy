@@ -11,7 +11,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Vite-generated CSS -->
-    @vite(['https://tadawy-production.up.railway.app/resources/css/app.css', 'https://tadawy-production.up.railway.app/resources/js/app.js'])	
+    @vite([vite_asset('https://tadawy-production.up.railway.app/resources/css/app.css'), vite_asset('https://tadawy-production.up.railway.app/resources/js/app.js')])	
 </head>
 <body class="font-sans text-gray-900 antialiased">
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
