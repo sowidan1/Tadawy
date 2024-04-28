@@ -21,10 +21,10 @@
         .auth-container {
             max-width: 400px;
             width: 100%;
-            padding: 20px;
+            padding: 10px;
             background-color: #0dbb8f;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            /* border-radius: 10px; */
+            /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
         }
     </style>
 </head>
@@ -32,7 +32,7 @@
     <div class="auth-container">
         <div>
             <a href="/">
-                <img src="https://tadawy-production.up.railway.app/assets/img/icons/unicons/logo.png" class="w-40 h-40 fill-current text-gray-500" />
+                <img src="https://tadawy-production.up.railway.app/assets/img/icons/unicons/logooo.png" class="w-40 h-40 fill-current text-gray-500" />
             </a>
         </div>
 
