@@ -24,18 +24,8 @@ class ClinicController extends Controller
             return response()->json(['error' => 'Clinic not found'], 404);
         }
 
-        return response()->json([
-            
-            $doctors = Doctor::where('clinic_id', $clinicId)
-                ->get([
-                    'id',
-                    'name',
-                    'photo',
-                    'specialty'
-                ])
-        ]);
+        $doctors = Doctor::where('clinic_id', $clinicId)->get();
 
-        dd($doctors);
         return $doctors;
     }
 }
