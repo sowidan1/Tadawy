@@ -23,18 +23,29 @@ class InfantController extends Controller
 
         return $response;
     }
-    
+
     public function getData(){
 
         $infant = Infant::first();
+
+        if(!$infant){
+            $response = [
+                'data' => [],
+                'message' => 'No infant data found',
+                'status' => 404
+            ];
     
-        $response = [
-            'data' => $infant,
-            'message' => 'Infant data fetched successfully',
-            'status' => 200
-        ];
+            return $response;
+        }else{
+            $response = [
+                'data' => $infant,
+                'message' => 'Infant data fetched successfully',
+                'status' => 200
+            ];
     
-        return $response;
+            return $response;
+        }
+    
     }
     
 
