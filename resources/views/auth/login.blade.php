@@ -15,14 +15,14 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: blue; /* Change background color to blue */
+            background-color: #0dbb8f; /* Change background color to blue */
             margin: 0;
         }
         .auth-container {
             max-width: 400px;
             width: 100%;
             padding: 20px;
-            background-color: white;
+            background-color: #0dbb8f;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
