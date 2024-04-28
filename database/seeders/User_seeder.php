@@ -641,7 +641,7 @@ class User_seeder extends Seeder
         $id = IdGenerator::generate(['table' => 'patients', 'length' => 8, 'prefix' => date('ym')]);
 
         $patients = [
-            'name'=> 'Hana Tarek',
+            'name'=> 'Hana Mohamed',
             'phone'=> '01014567890',
             'date_of_birth' => '1990-01-01',
             'gender'=>'female',
