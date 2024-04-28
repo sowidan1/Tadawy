@@ -11,10 +11,10 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Vite CSS -->
-    <link rel="stylesheet" href="{{ vite_asset('resources/css/app.css') }}">
+    <link rel="stylesheet" href="{{ vite_asset('https://tadawy-production.up.railway.app/resources/css/app.css') }}">
 
     <!-- Vite JS -->
-    <script type="module" src="{{ vite_asset('resources/js/app.js') }}"></script>
+    <script type="module" src="{{ vite_asset('https://tadawy-production.up.railway.app/resources/js/app.js') }}"></script>
 </head>
 <body class="font-sans text-gray-900 antialiased">
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
