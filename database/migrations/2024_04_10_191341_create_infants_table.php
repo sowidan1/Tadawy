@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('infants', function (Blueprint $table) {
             $table->id();
-            $table->string('temperature');
-            $table->string('humidity');
-            $table->string('heart_Rate');
+            // $table->string('temperature');
+            // $table->string('humidity');
+            // $table->string('heart_Rate');
             $table->enum('color_sensor', ['Jaundice', 'Not_jaundice']);
 
             $table->timestamps();

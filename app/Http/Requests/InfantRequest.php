@@ -22,9 +22,9 @@ class InfantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'temperature' => 'required',
-            'humidity' => 'required',
-            'heart_Rate' => 'required',
+            // 'temperature' => 'required',
+            // 'humidity' => 'required',
+            // 'heart_Rate' => 'required',
             'color_sensor' => 'required|in:Jaundice,Not_jaundice',
         ];
     }
