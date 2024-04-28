@@ -10,7 +10,7 @@ class ClinicController extends Controller
 {
     public function index()
     {
-        $clinics = Clinic::select('id', 'name', 'photo')->get();
+        $clinics = Clinic::select('id', 'name', 'photo','description')->get();
 
         return $clinics;
     }
@@ -25,11 +25,8 @@ class ClinicController extends Controller
         }
 
         return response()->json([
-            'id' => $clinic->id,
-            'name' => $clinic->name,
-            'description' => $clinic->description,
-            'photo' => $clinic->photo,
-            'doctors' => Doctor::where('clinic_id', $clinicId)
+            
+            $doctors = Doctor::where('clinic_id', $clinicId)
                 ->get([
                     'id',
                     'name',
@@ -37,5 +34,7 @@ class ClinicController extends Controller
                     'specialty'
                 ])
         ]);
+
+        return response()->json($doctors);
     }
 }
