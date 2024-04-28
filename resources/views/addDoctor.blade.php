@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
-    data-assets-path="{{ asset('assets/') }}" data-template="vertical-menu-template-free">
+    data-assets-path="{{ asset('https://tadawy-production.up.railway.app/assets/') }}" data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/icons/unicons/logo.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/logo.png') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,27 +23,27 @@
         rel="stylesheet" />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/boxicons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/fonts/boxicons.css') }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/theme-default.css') }}"
+    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/css/theme-default.css') }}"
         class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}" />
+    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/css/demo.css') }}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 
-    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/js/helpers.js') }}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="{{ asset('assets/js/config.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/js/config.js') }}"></script>
 </head>
 
 <body>
@@ -57,7 +57,7 @@
                     <a href="{{ route('dashboard') }}" class="app-brand-link">
                         <span class="app-brand-logo demo">
                             <link rel="icon" type="image/x-icon"
-                                href="{{ asset('assets/img/icons/unicons/logo.png') }}" />
+                                href="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/logo.png') }}" />
                             <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
                                     <g id="Icon" transform="translate(27.000000, 15.000000)">
@@ -87,7 +87,7 @@
                         </span>
                         <span>
                             <div class="avatar flex-shrink-0">
-                                <img src="{{ asset('assets/img/icons/unicons/logo.png') }}" alt="LOGO"
+                                <img src="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/logo.png') }}" alt="LOGO"
                                     class="rounded" />
                             </div>
                         </span>
@@ -310,21 +310,21 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
-    <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
-    <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/popper/popper.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
-    <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/js/main.js') }}"></script>
 
     <!-- Page JS -->
-    <script src="{{ asset('assets/js/pages-account-settings-account.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/js/pages-account-settings-account.js') }}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
