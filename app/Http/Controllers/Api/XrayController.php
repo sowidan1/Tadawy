@@ -13,12 +13,7 @@ class XrayController extends Controller
     {
         $xrays = Xray::all();
 
-        $response = [
-            'xrays' => $xrays,
-            'message' => 'Xrays fetched successfully',
-            'status' => 200
-        ];
-        return $response;
+        return $xrays;
     }
 
     public function xrayById($id)
