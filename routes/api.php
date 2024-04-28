@@ -11,6 +11,10 @@ use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\XrayController;
 use Illuminate\Support\Facades\Route;
 
+Route::post('/infant', [InfantController::class, 'store']);
+
+
+
 Route::prefix('doctor')->group(function () {
     Route::post('/login', [AuthController::class, 'doctorLogin']);
 });
@@ -19,7 +23,6 @@ Route::prefix('patient')->group(function () {
     Route::post('/login', [AuthController::class, 'patientLogin']);
 });
 
-Route::post('/infant', [InfantController::class, 'store']);
 
 Route::group(['middleware' => ['auth:sanctum', 'limit.request']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
