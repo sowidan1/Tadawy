@@ -22,13 +22,7 @@ class TestController extends Controller
     {
         $test = Main_test::all();
 
-        $response = [
-            'test' => $test,
-            'message' => 'Test fetched successfully',
-            'status' => 200
-        ];
-
-        return $response; 
+        return $test; 
     }
 
     public function testById($id)
