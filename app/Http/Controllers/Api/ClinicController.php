@@ -35,6 +35,6 @@ class ClinicController extends Controller
                 ])
         ]);
 
-        return response()->json($doctors);
+        return $doctors;
     }
 }
