@@ -35,6 +35,7 @@ class ClinicController extends Controller
                 ])
         ]);
 
+        dd($doctors);
         return $doctors;
     }
 }
