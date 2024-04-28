@@ -44,12 +44,6 @@ class DoctorController extends Controller
             return response()->json(['error' => 'Patients not found'], 404);
         }
 
-        $reponse = [
-            'patients' => $dpatients,
-            'message' => 'Patients fetched successfully',
-            'status' => 200
-        ];
-
-        return $reponse;
+        return $dpatients;
     }
 }
