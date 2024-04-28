@@ -32,7 +32,7 @@
     <div class="auth-container">
         <div>
             <a href="/">
-                <img src="https://tadawy-production.up.railway.app/assets/img/icons/unicons/logooo.png" class="w-40 h-40 fill-current text-gray-500" />
+                <img src="https://tadawy-production.up.railway.app/assets/img/icons/unicons/logooo.png" class="w-10 h-10 fill-current text-gray-500" />
             </a>
         </div>
 
