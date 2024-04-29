@@ -186,7 +186,7 @@ use App\Models\Patient;
                                                     </div>
                                                 </div>
                                                 <span class="fw-semibold d-block mb-1">Appointment</span>
-                                                <h3 class="card-title mb-2">75</h3>
+                                                <h3 class="card-title mb-2">{{ $allAppointments }}</h3>
                                                 
                                             </div>
                                         </div>

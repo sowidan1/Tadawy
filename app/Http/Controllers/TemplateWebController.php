@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Clinic;
 use App\Models\Doctor;
 use App\Models\Patient;
@@ -14,7 +15,8 @@ class TemplateWebController extends Controller
         $allPatients = Patient::count();
         $allDoctors = Doctor::count();
         $allClinics = Clinic::paginate(6);
-        return view('master' , compact('allPatients','allDoctors' , 'allClinics'));
+        $allAppointments = Appointment::count();
+        return view('master' , compact('allPatients','allDoctors' , 'allClinics','allAppointments'));
     }
     public function add_doctor()
     {

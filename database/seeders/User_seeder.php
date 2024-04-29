@@ -668,13 +668,13 @@ class User_seeder extends Seeder
             [
                 'name'=> 'Shady Mohamed',
                 'phone'=> '01014879654',
-                'date_of_birth'=> '2007-02-10',
+                'date_of_birth'=> '2007-07-17',
                 'gender'=> 'male',
                 'password'=> bcrypt('shady123'),
                 'email'=> 'shady@patient.com',
                 'photo'=> 'images/pa3.jpg',
-                'doctor_id'=> 1,
-                'clinic_id'=> 2,
+                'doctor_id'=> 3,
+                'clinic_id'=> 5,
                 'id'=> $id,
             ],[
                 'name'=> 'Reem Mohamed',
