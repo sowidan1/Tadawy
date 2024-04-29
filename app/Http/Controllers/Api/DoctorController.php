@@ -46,4 +46,16 @@ class DoctorController extends Controller
 
         return $dpatients;
     }
+
+    public function patients()
+    {
+        $patients = Patient::select('name', 'photo')->get();
+
+        if (!$patients) {
+            return response()->json(['error' => 'Patients not found'], 404);
+        }
+
+        return $patients;
+    }
+
 }
