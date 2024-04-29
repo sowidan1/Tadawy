@@ -199,7 +199,7 @@ use App\Models\Patient;
                                                         <div
                                                             class="card-title d-flex align-items-start justify-content-between">
                                                             <div class="avatar flex-shrink-0">
-                                                                <img src="{{ asset('https://tadawy-production.up.railway.app/assets/سسثفسimg/icons/unicons/doctor.png') }}"
+                                                                <img src="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/doctor.png') }}"
                                                                     alt="Credit Card" class="rounded" />
                                                             </div>
                                                             <div class="dropdown">
@@ -272,7 +272,7 @@ use App\Models\Patient;
                         </div>
                         <div class="row">
                             <!-- Order Statistics -->
-                            <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+                            {{-- <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
                                 <div class="card h-100">
                                     <div class="card-header d-flex align-items-center justify-content-between pb-0">
                                         <div class="card-title mb-0">
@@ -421,7 +421,7 @@ use App\Models\Patient;
                                     </div>
                                 </div>
                             </div>
-                            <!--/ Expense Overview -->
+                            <!--/ Expense Overview --> --}}
 
                             <!-- Clinics -->
                             <div class="col-md-6 col-lg-4 order-2 mb-4">
