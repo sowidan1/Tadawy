@@ -290,10 +290,10 @@ use App\Models\Patient;
                                                         </div>
                                                         <div class="user-progress d-flex align-items-center gap-1">
                                                             <span class="badge bg-label-primary">
-                                                                <small class="mb-0">{{ Doctor::where("clinic_id",$clinic->id)->count() }} Doctor's</small>
+                                                                <span class="fw-semibold d-block mb-1">{{ Doctor::where("clinic_id",$clinic->id)->count() }} Doctor's</span>
                                                             </span>
                                                             <span class="badge bg-label-primary">
-                                                                <small class="mb-0">{{ Patient::where("clinic_id",$clinic->id)->count() }} Patient's</small>
+                                                                <span class="mb-0">{{ Patient::where("clinic_id",$clinic->id)->count() }} Patient's</span>
                                                             </span>
                                                         </div>
                                                     </div>
