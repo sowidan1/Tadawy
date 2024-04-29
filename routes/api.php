@@ -29,6 +29,11 @@ Route::prefix('patient')->group(function () {
 Route::group(['middleware' => ['auth:sanctum', 'limit.request']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
+
+    Route::get('/all-patient', [DoctorController::class, 'patients']);
+        
+
+
     Route::prefix('fitness')->group(function () {
         Route::get('/fit', [FitController::class, 'index']);
         Route::get('/fit/{id}', [FitController::class, 'show']);
