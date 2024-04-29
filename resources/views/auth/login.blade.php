@@ -17,14 +17,17 @@
             height: 100vh;
             margin: 0;
         }
+        .auth-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="auth-container">
-
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
             <!-- Email Address -->
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
