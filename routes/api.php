@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AppointmentController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ClinicController;
 use App\Http\Controllers\Api\CommunityController;
@@ -75,6 +76,13 @@ Route::group(['middleware' => ['auth:sanctum', 'limit.request']], function () {
         Route::get('/question/notAnswerd/{id}', [CommunityController::class, 'showQuestion']);
         Route::put('/answer/store/{id}', [CommunityController::class, 'answer']);
         Route::get('/question/Answerd', [CommunityController::class, 'AnsweredQuestions']);
+
+    });
+
+    Route::prefix('appointment')->group(function () {
+        Route::post('/store', [AppointmentController::class, 'store']);
+        Route::get('/all-patient/{id_doctor}', [AppointmentController::class, 'all_patient']);
+        Route::get('/all-doctor/{id_patient}', [AppointmentController::class, 'all_doctor']);
 
     });
 });
