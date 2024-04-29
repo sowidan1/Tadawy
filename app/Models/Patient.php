@@ -21,8 +21,6 @@ class Patient extends Model
         'photo',
         'phone',
         'date_of_birth',
-        'doctor_id',
-        'clinic_id',
     ];
 
     public static function boot()

@@ -104,31 +104,30 @@
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
-                    <li class="menu-item active">
+                    <li class="menu-item">
                         <a href="{{ route('dashboard') }}" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Dashboard</div>
+                            <div data-i18n="Analytics"> - Dashboard</div>
                         </a>
                     </li>
                     <li class="menu-item ">
                         <a href="{{ route('addDoctor') }}" class="menu-link">
-                            <div data-i18n="Account">Add Doctor</div>
+                            <div data-i18n="Account"> - Add Doctor</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('addpatient') }}" class="menu-link">
-                            <div data-i18n="Account">Add Patient</div>
+                            <div data-i18n="Account"> - Add Patient</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('All_Patient') }}" class="menu-link">
-                            <div data-i18n="Account">Patients Details</div>
+                            <div data-i18n="Account"> - Patients Details</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="{{ route('All_Doctor') }}" class="menu-link">
-                            <div data-i18n="Account">Doctors Details</div>
+                            <div data-i18n="Account"> - Doctors Details</div>
                         </a>
                     </li>
                     <!-- <i class="menu-icon tf-icons bx bx-file"></i> -->
@@ -184,8 +183,6 @@
                                                     <th>Phone</th>
                                                     <th>Gender</th>
                                                     <th>Date Of Birth</th>
-                                                    <th>Clinic Name</th>
-                                                    <td>Doctor Name</td>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -202,10 +199,10 @@
                                                                 class="badge bg-label-primary me-1">{{ $patient->gender }}</span>
                                                         </td>
                                                         <td>{{ $patient->date_of_birth }}</td>
-                                                        <td>{{ App\Models\Clinic::findOrFail($patient->clinic_id)->name }}
+                                                        {{-- <td>{{ App\Models\Clinic::findOrFail($patient->clinic_id)->name }}
                                                         </td>
                                                         <td>{{ App\Models\Doctor::findOrFail($patient->doctor_id)->name }}
-                                                        </td>
+                                                        </td> --}}
                                                         <td>
                                                             <form action="{{ route('patients.delete') }}"
                                                                 method="post">

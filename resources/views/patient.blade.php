@@ -1,7 +1,12 @@
+<? php
+use App\Models\Clinic;
+
+?>
 <!DOCTYPE html>
 
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
-    data-assets-path="{{ asset('https://tadawy-production.up.railway.app/assets/') }}" data-template="vertical-menu-template-free">
+    data-assets-path="{{ asset('https://tadawy-production.up.railway.app/assets/') }}"
+    data-template="vertical-menu-template-free">
 
 <head>
     <meta charset="utf-8" />
@@ -10,7 +15,7 @@
 
     <title>TADAWY</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="" /> 
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/logo.png') }}" />
@@ -23,18 +28,23 @@
         rel="stylesheet" />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/fonts/boxicons.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/fonts/boxicons.css') }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/css/theme-default.css') }}"
+    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/css/core.css') }}"
+        class="template-customizer-core-css" />
+    <link rel="stylesheet"
+        href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/css/theme-default.css') }}"
         class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/css/demo.css') }}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
 
-    <link rel="stylesheet" href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
 
     <!-- Page CSS -->
 
@@ -87,8 +97,8 @@
                         </span>
                         <span>
                             <div class="avatar flex-shrink-0">
-                                <img src="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/logo.png') }}" alt="LOGO"
-                                    class="rounded" />
+                                <img src="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/logo.png') }}"
+                                    alt="LOGO" class="rounded" />
                             </div>
                         </span>
                         <span class="app-brand-text demo menu-text fw-bolder ms-2">TADAWY</span>
@@ -104,31 +114,30 @@
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
-                    <li class="menu-item active">
+                    <li class="menu-item">
                         <a href="{{ route('dashboard') }}" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Dashboard</div>
+                            <div data-i18n="Analytics"> - Dashboard</div>
                         </a>
                     </li>
                     <li class="menu-item ">
                         <a href="{{ route('addDoctor') }}" class="menu-link">
-                            <div data-i18n="Account">Add Doctor</div>
+                            <div data-i18n="Account"> - Add Doctor</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('addpatient') }}" class="menu-link">
-                            <div data-i18n="Account">Add Patient</div>
+                            <div data-i18n="Account"> - Add Patient</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('All_Patient') }}" class="menu-link">
-                            <div data-i18n="Account">Patients Details</div>
+                            <div data-i18n="Account"> - Patients Details</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="{{ route('All_Doctor') }}" class="menu-link">
-                            <div data-i18n="Account">Doctors Details</div>
+                            <div data-i18n="Account"> - Doctors Details</div>
                         </a>
                     </li>
                     <!-- <i class="menu-icon tf-icons bx bx-file"></i> -->
@@ -193,18 +202,33 @@
                                                 @foreach ($patients as $patient)
                                                     <tr>
                                                         <td>{{ $patient->id }}</td>
-                                                        <td> <i class="fab fa-angular fa-lg text-danger "> </i>
+                                                        <td>
+                                                            <i class="fab fa-angular fa-lg text-danger"></i>
                                                             <strong>{{ $patient->name }}</strong>
                                                         </td>
                                                         <td>{{ $patient->email }}</td>
                                                         <td>{{ $patient->phone }}</td>
-                                                        <td> <span
+                                                        <td><span
                                                                 class="badge bg-label-primary me-1">{{ $patient->gender }}</span>
                                                         </td>
                                                         <td>{{ $patient->date_of_birth }}</td>
-                                                        <td>{{ App\Models\Clinic::findOrFail($patient->clinic_id)->name }}
+                                                        <td>
+                                                            @foreach ($clinics as $clinic)
+                                                                @if (
+                                                                    $clinic->id ==
+                                                                        $Appointment->where('patient_id', $patient->id)->pluck('clinic_id')->first())
+                                                                    {{ $clinic->name }}
+                                                                @endif
+                                                            @endforeach
                                                         </td>
-                                                        <td>{{ App\Models\Doctor::findOrFail($patient->doctor_id)->name }}
+                                                        <td>
+                                                            @foreach ($clinics as $clinic)
+                                                                @if (
+                                                                    $clinic->id ==
+                                                                        $Appointment->where('patient_id', $patient->id)->pluck('clinic_id')->first())
+                                                                    {{ \App\Models\Doctor::where('id', $clinic->doctor_id)->value('name') }}
+                                                                @endif
+                                                            @endforeach
                                                         </td>
                                                         <td>
                                                             <form action="{{ route('patients.delete') }}"
@@ -218,12 +242,13 @@
                                                         </td>
                                                     </tr>
                                                 @endforeach
+
                                             </tbody>
                                         </table>
 
                                     </div>
                                 </div>
-                                <div class="pagination mt-3" style="display: flex; justify-content: center;">
+                                {{-- <div class="pagination mt-3" style="display: flex; justify-content: center;">
                                     <nav aria-label="Page navigation">
                                         <ul class="pagination">
                                             <li
@@ -243,7 +268,7 @@
                                             </li>
                                         </ul>
                                     </nav>
-                                </div>
+                                </div> --}}
                                 <!--/ Striped Rows -->
                             </div>
                         </div>
@@ -285,7 +310,9 @@
     <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/jquery/jquery.js') }}"></script>
     <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script
+        src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}">
+    </script>
 
     <script src="{{ asset('https://tadawy-production.up.railway.app/assets/vendor/js/menu.js') }}"></script>
     <!-- endbuild -->
@@ -296,7 +323,8 @@
     <script src="{{ asset('https://tadawy-production.up.railway.app/assets/js/main.js') }}"></script>
 
     <!-- Page JS -->
-    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/js/pages-account-settings-account.js') }}"></script>
+    <script src="{{ asset('https://tadawy-production.up.railway.app/assets/js/pages-account-settings-account.js') }}">
+    </script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

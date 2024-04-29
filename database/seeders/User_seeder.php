@@ -649,8 +649,6 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('hana1234'),
                 'email'=> 'hana@patient.com',
                 'photo'=> 'images/pa1.jpg',
-                'doctor_id'=> 6,
-                'clinic_id'=> 1,
                 'id'=> $id,
             
             ],[
@@ -661,8 +659,6 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('mohy123'),
                 'email'=> 'mohy@patient.com',
                 'photo'=> 'images/pa2.jpg',
-                'doctor_id'=> 5,
-                'clinic_id'=> 5,
                 'id'=> $id,
             ],
             [
@@ -673,8 +669,6 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('shady123'),
                 'email'=> 'shady@patient.com',
                 'photo'=> 'images/pa3.jpg',
-                'doctor_id'=> 3,
-                'clinic_id'=> 5,
                 'id'=> $id,
             ],[
                 'name'=> 'Reem Mohamed',
@@ -684,8 +678,6 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('reem123'),
                 'email'=> 'reem@patient.com',
                 'photo'=> 'images/pa5.jpg',
-                'doctor_id'=> 1,
-                'clinic_id'=> 2,
                 'id'=> $id,
             ],[
                 'name'=> 'Abdallah Roshdy',
@@ -695,8 +687,6 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('abdallah1234'),
                 'email'=> 'abdallah@patient.com',
                 'photo'=> 'images/pa4.jpg',
-                'doctor_id'=> 4,
-                'clinic_id'=> 3,
                 'id'=> $id,
             ]
         ];

@@ -17,7 +17,7 @@ class LimitRequestMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $throttler = Throttle::get($request, 5, 1);
+        $throttler = Throttle::get($request, 20, 1);
         Throttle::attempt($request);
         if(!$throttler->check()){
         App::abort(429, 'Too many requests');

@@ -104,31 +104,30 @@
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
-                    <li class="menu-item active">
+                    <li class="menu-item">
                         <a href="{{ route('dashboard') }}" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Dashboard</div>
+                            <div data-i18n="Analytics"> - Dashboard</div>
                         </a>
                     </li>
                     <li class="menu-item ">
                         <a href="{{ route('addDoctor') }}" class="menu-link">
-                            <div data-i18n="Account">Add Doctor</div>
+                            <div data-i18n="Account"> - Add Doctor</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('addpatient') }}" class="menu-link">
-                            <div data-i18n="Account">Add Patient</div>
+                            <div data-i18n="Account"> - Add Patient</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('All_Patient') }}" class="menu-link">
-                            <div data-i18n="Account">Patients Details</div>
+                            <div data-i18n="Account"> - Patients Details</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="{{ route('All_Doctor') }}" class="menu-link">
-                            <div data-i18n="Account">Doctors Details</div>
+                            <div data-i18n="Account"> - Doctors Details</div>
                         </a>
                     </li>
                     <!-- <i class="menu-icon tf-icons bx bx-file"></i> -->
@@ -185,12 +184,12 @@
                                                 <div class="mb-3 col-md-6">
                                                     <label for="Full_Name" class="form-label">Full Name</label>
                                                     <input class="form-control" type="text" id="Full_Name"
-                                                        name="Full_Name" placeholder="DR Mohammed Fathy" autofocus />
+                                                        name="Full_Name" placeholder="Mohammed Fathy" autofocus />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="email" class="form-label">E-mail</label>
                                                     <input class="form-control" type="text" id="email"
-                                                        name="email" placeholder="DR.Mohammed@example.com" />
+                                                        name="email" placeholder="Mohammed@example.com" />
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label for="organization" class="form-label">Password</label>
@@ -220,28 +219,7 @@
                                                     <input type="date" name="date_of_birth" id="date_of_birth"
                                                         class="form-control">
                                                 </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="clinic_id" class="form-label">clinics</label>
-                                                    <select id="clinic_id" class="select2 form-select"
-                                                        name="clinic_id" required>
-                                                        <option value="">Select Clinic</option>
-                                                        @foreach ($clinics as $clinic)
-                                                            <option value="{{ $clinic->id }}">{{ $clinic->name }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-md-6">
-                                                    <label for="doctor_id" class="form-label">doctors</label>
-                                                    <select id="doctor_id" class="select2 form-select"
-                                                        name="doctor_id" required>
-                                                        <option value="">Select Doctor</option>
-                                                        @foreach ($doctors as $doctor)
-                                                            <option value="{{ $doctor->id }}">{{ $doctor->name }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
+                                                
                                             </div>
                                             <div class="mt-2">
                                                 <button type="submit" class="btn btn-primary me-2">Save

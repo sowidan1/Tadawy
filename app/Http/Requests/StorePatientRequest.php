@@ -29,8 +29,6 @@ class StorePatientRequest extends FormRequest
             'phoneNumber' => 'required|string',
             'gender' => 'required|in:male,female',
             'date_of_birth' => 'required|date',
-            'doctor_id' => 'required|exists:doctors,id',
-            'clinic_id' => 'required|exists:clinics,id',
         ];
     }
 }
