@@ -1,6 +1,7 @@
 <?php 
 use App\Models\Doctor;
 use App\Models\Patient;
+use App\Models\Appointment;
 ?>
 <!DOCTYPE html>
 
@@ -108,31 +109,30 @@ use App\Models\Patient;
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboard -->
-                    <li class="menu-item active">
+                    <li class="menu-item">
                         <a href="{{ route('dashboard') }}" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                            <div data-i18n="Analytics">Dashboard</div>
+                            <div data-i18n="Analytics"> - Dashboard</div>
                         </a>
                     </li>
                     <li class="menu-item ">
                         <a href="{{ route('addDoctor') }}" class="menu-link">
-                            <div data-i18n="Account">Add Doctor</div>
+                            <div data-i18n="Account"> - Add Doctor</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('addpatient') }}" class="menu-link">
-                            <div data-i18n="Account">Add Patient</div>
+                            <div data-i18n="Account"> - Add Patient</div>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('All_Patient') }}" class="menu-link">
-                            <div data-i18n="Account">Patients Details</div>
+                            <div data-i18n="Account"> - Patients Details</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="{{ route('All_Doctor') }}" class="menu-link">
-                            <div data-i18n="Account">Doctors Details</div>
+                            <div data-i18n="Account"> - Doctors Details</div>
                         </a>
                     </li>
                     <!-- <i class="menu-icon tf-icons bx bx-file"></i> -->
@@ -293,7 +293,7 @@ use App\Models\Patient;
                                                                 <span class="fw-semibold d-block mb-1">{{ Doctor::where("clinic_id",$clinic->id)->count() }} Doctor's</span>
                                                             </span>
                                                             <span class="badge bg-label-primary">
-                                                                <span class="mb-0">{{ Patient::where("clinic_id",$clinic->id)->count() }} Patient's</span>
+                                                                <span class="fw-semibold d-block mb-1">{{ Appointment::where("clinic_id",$clinic->id)->count() }} Patient's</span>
                                                             </span>
                                                         </div>
                                                     </div>

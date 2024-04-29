@@ -36,6 +36,7 @@ class AppointmentRequest extends FormRequest
 
             'doctor_id' => 'required|exists:doctors,id',
             'patient_id' => 'required|exists:patients,id',
+            'clinic_id' => 'required|exists:clinics,id',
             'date' => 'required|date',
             'time' => 'required|date_format:H:i',
         ];
