@@ -37,12 +37,12 @@
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
 
 
-                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        {{-- <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
                             <li class="nav-item lh-1 me-3">
                                 <a class="text-primary">Admin : {{ Auth::user()->name }}</a>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </nav>
                 
