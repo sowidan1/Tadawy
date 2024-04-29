@@ -27,12 +27,11 @@
     </style>
 </head>
 <body>
-    <div class="auth-container">
         <div class="appbar">
             <img src="{{ asset('images/logo.png') }}" alt="Logo">
             <span>Tadawy</span>
         </div>
-        <h2 class="text-center mb-4">Admin Log In</h2>
+        <h2 class="text-center mb-4">Admin Login</h2>
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <!-- Email Address -->
@@ -60,6 +59,5 @@
                 <button type="submit" class="btn btn-primary">Log in</button>
             </div>
         </form>
-    </div>
 </body>
 </html>
