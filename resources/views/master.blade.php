@@ -270,211 +270,56 @@ use App\Models\Patient;
                             </div>
                             
                         </div>
-                        <div class="row">
-                            <!-- Order Statistics -->
-                            {{-- <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
-                                        <div class="card-title mb-0">
-                                            <h5 class="m-0 me-2"> Statistics</h5>
-                                            <small class="text-muted">42.82k Total Statistics</small>
+                            <div class="row">
+                                <!-- Clinics -->
+                                <div class="col-12 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-header d-flex align-items-center justify-content-between">
+                                            <h5 class="card-title m-0 me-2">Clinics</h5>
                                         </div>
-                                        <div class="dropdown">
-                                            <button class="btn p-0" type="button" id="orederStatistics"
-                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-end"
-                                                aria-labelledby="orederStatistics">
-                                                <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center mb-3">
-                                            <div class="d-flex flex-column align-items-center gap-1">
-                                                <h2 class="mb-2">8,258</h2>
-                                                <span>Total Orders</span>
-                                            </div>
-                                            <div id="orderStatisticsChart"></div>
-                                        </div>
-                                        <ul class="p-0 m-0">
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/user-interface - Copy.png') }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <h6 class="mb-0"></h6>
-                                                        <small class="text-muted">Mobile App</small>
-                                                    </div>
-                                                    <div class="user-progress">
-                                                        <small class="fw-semibold">82.5k</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/artificial-intelligence (1).png') }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <h6 class="mb-0">AI assistant</h6>
-                                                        <small class="text-muted">Dignostic</small>
-                                                    </div>
-                                                    <div class="user-progress">
-                                                        <small class="fw-semibold">20k</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/incubator - Copy.png') }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <h6 class="mb-0">Baby Incubator</h6>
-                                                        <small class="text-muted">temp,Heart</small>
-                                                    </div>
-                                                    <div class="user-progress">
-                                                        <small class="fw-semibold">32</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="d-flex">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/health.png') }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <h6 class="mb-0">Smart watch</h6>
-                                                        <small class="text-muted">5000steps, </small>
-                                                    </div>
-                                                    <div class="user-progress">
-                                                        <small class="fw-semibold">10.5k</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/ Order Statistics -->
-
-                            <!-- Expense Overview -->
-                            <div class="col-md-6 col-lg-4 order-1 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-header">
-                                        <ul class="nav nav-pills" role="tablist">
-                                            <li class="nav-item">
-                                                <div class="nav-link active" role="tab"
-                                                    data-bs-toggle="tab" data-bs-target="#navs-tabs-line-card-income"
-                                                    aria-controls="navs-tabs-line-card-income" aria-selected="true">
-                                                    Income
-                                                </div>
-                                            </li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <div class="card-body px-0">
-                                        <div class="tab-content p-0">
-                                            <div class="tab-pane fade show active" id="navs-tabs-line-card-income"
-                                                role="tabpanel">
-                                                <div class="d-flex p-4 pt-3">
+                                        <div class="card-body">
+                                            <ul class="p-0 m-0">
+                                                @foreach ($allClinics as $clinic)
+                                                <li class="d-flex mb-4 pb-1">
                                                     <div class="avatar flex-shrink-0 me-3">
-                                                        <img src="{{ asset('https://tadawy-production.up.railway.app/assets/img/icons/unicons/wallet.png') }}"
-                                                            alt="User" />
+                                                        <img src="{{ $clinic->photo }}" alt="User" class="rounded" />
                                                     </div>
-                                                    <div>
-                                                        <small class="text-muted d-block">Total Balance</small>
-                                                        <div class="d-flex align-items-center">
-                                                            <h6 class="mb-0 me-1">$459.10</h6>
-                                                            <small class="text-success fw-semibold">
-                                                                <i class="bx bx-chevron-up"></i>
-                                                                42.9%
-                                                            </small>
+                                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                                        <div class="me-2">
+                                                            <small class="mb-0">{{ $clinic->name }}</small>
+                                                        </div>
+                                                        <div class="user-progress d-flex align-items-center gap-1">
+                                                            <span class="badge bg-label-primary">
+                                                                <small class="mb-0">{{ Doctor::where("clinic_id",$clinic->id)->count() }} Doctor's</small>
+                                                            </span>
+                                                            <span class="badge bg-label-primary">
+                                                                <small class="mb-0">{{ Patient::where("clinic_id",$clinic->id)->count() }} Patient's</small>
+                                                            </span>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div id="incomeChart"></div>
-                                                <div class="d-flex justify-content-center pt-4 gap-2">
-                                                    <div class="flex-shrink-0">
-                                                        <div id="expensesOfWeek"></div>
-                                                    </div>
-                                                    <div>
-                                                        <p class="mb-n1 mt-1">Expenses This Week</p>
-                                                        <small class="text-muted">$39 less than last week</small>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        <div class="pagination mt-3" style="display: flex; justify-content: center;">
+                                            <nav aria-label="Page navigation">
+                                                <ul class="pagination">
+                                                    <li class="page-item {{ $allClinics->previousPageUrl() ? '' : 'disabled' }}">
+                                                        <a class="page-link" href="{{ $allClinics->previousPageUrl() }}" tabindex="-1" aria-disabled="true">Previous</a>
+                                                    </li>
+                                                    @foreach ($allClinics->getUrlRange(1, $allClinics->lastPage()) as $page => $url)
+                                                    <li class="page-item {{ $page == $allClinics->currentPage() ? 'active' : '' }}"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                                                    @endforeach
+                                                    <li class="page-item {{ $allClinics->nextPageUrl() ? '' : 'disabled' }}">
+                                                        <a class="page-link" href="{{ $allClinics->nextPageUrl() }}">Next</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
                                         </div>
                                     </div>
                                 </div>
+                                <!--/ Transactions -->
                             </div>
-                            <!--/ Expense Overview --> --}}
-
-                            <!-- Clinics -->
-                            <div class="col-md-6 col-lg-4 order-2 mb-4">
-                                <div class="card h-100">
-                                    <div class="card-header d-flex align-items-center justify-content-between">
-                                        <h5 class="card-title m-0 me-2">Clinics</h5>
-
-                                    </div>
-                                    <div class="card-body">
-                                        <ul class="p-0 m-0">
-                                            @foreach ($allClinics as $clinic)
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <img src="{{ $clinic->photo }}"
-                                                        alt="User" class="rounded" />
-                                                </div>
-                                                <div
-                                                    class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <small class="mb-0">{{ $clinic->name }}</small>
-                                                    </div>
-                                                    <div class="user-progress d-flex align-items-center gap-1">
-                                                        <span class="badge bg-label-primary">
-                                                            <small class="mb-0">{{ Doctor::where("clinic_id",$clinic->id)->count() }} Doctor's</small>
-                                                        </span>
-                                                        <span class="badge bg-label-primary ">
-                                                            <small class="mb-0">{{ Patient::where("clinic_id",$clinic->id)->count() }} Patient's</small>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    <div class="pagination mt-3" style="display: flex; justify-content: center;">
-                                        <nav aria-label="Page navigation">
-                                            <ul class="pagination">
-                                                <li class="page-item {{ $allClinics->previousPageUrl() ? '' : 'disabled' }}">
-                                                    <a class="page-link" href="{{ $allClinics->previousPageUrl() }}" tabindex="-1" aria-disabled="true">Previous</a>
-                                                </li>
-                                                @foreach ($allClinics->getUrlRange(1, $allClinics->lastPage()) as $page => $url)
-                                                    <li class="page-item {{ $page == $allClinics->currentPage() ? 'active' : '' }}"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
-                                                @endforeach
-                                                <li class="page-item {{ $allClinics->nextPageUrl() ? '' : 'disabled' }}">
-                                                    <a class="page-link" href="{{ $allClinics->nextPageUrl() }}">Next</a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/ Transactions -->
-                        </div>
                     </div>
                     <!-- / Content -->
 

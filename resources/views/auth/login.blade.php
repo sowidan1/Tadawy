@@ -15,25 +15,41 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            /* background-color: #0dbb8f; Change background color to blue */
             margin: 0;
         }
+
         .auth-container {
-            max-width: 400px;
+            max-width: 400px; /* Adjust as needed */
             width: 100%;
-            padding: 10px;
-            /* border-radius: 10px; */
-            /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        } */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adding shadow */
+        }
+
+        .auth-container .app-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .auth-container .logo img {
+            height: 40px; /* Adjust height as needed */
+        }
     </style>
 </head>
 <body>
     <div class="auth-container">
-        {{-- <div>
-            <a href="/">
-                <img src="https://tadawy-production.up.railway.app/assets/img/icons/unicons/logooo.png" class="w-10 h-10 fill-current text-gray-500" />
-            </a>
-        </div> --}}
+        <div class="app-bar">
+            <div class="logo">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+            </div>
+            <div class="title">
+                <h2>Tadawy</h2>
+            </div>
+        </div>
+
+        <h3 class="text-center mb-4">Admin Log In</h3>
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
