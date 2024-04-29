@@ -50,8 +50,12 @@ class PatientWebController extends Controller
     public function show(Request $request , $doctor_id)
     {
 
-        $patients = Appointment::where('doctor_id', $doctor_id)->paginate(10);
+        $Appointment = Appointment::where('doctor_id', $doctor_id)->get();
 
-        return view('patient', compact('patients'));
+        $clinics = Clinic::where('id', $Appointment->pluck('clinic_id'));
+
+        $patients = Patient::whereIn('id', $Appointment->pluck('patient_id'))->get();
+
+        return view('patient', compact('patients', 'clinics', 'Appointment'));
     }
 }

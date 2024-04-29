@@ -201,12 +201,12 @@ use App\Models\Appointment;
                                                         <td>{{ $doctor->email }}</td>
                                                         <td>{{ $doctor->phone }}</td>
                                                         <td>
-                                                            <form action="{{ route('patients.show', ['doctor_id' => $doctor->id]) }}" method="GET">
-                                                                <input type="hidden" name="count_patient">
+                                                            {{-- <form action="{{ route('patients.show', ['doctor_id' => $doctor->id]) }}" method="GET"> --}}
+                                                                {{-- <input type="hidden" name="count_patient"> --}}
                                                                 <button class="btn rounded-pill btn-primary">Have
                                                                     {{ Appointment::where('doctor_id', $doctor->id)->count() }}
                                                                     Patient's</button>
-                                                            </form>
+                                                            {{-- </form> --}}
                                                         </td>
                                                         <td>{{ $doctor->specialty }}</td>
                                                         <td>{{ App\Models\Clinic::findOrFail($doctor->clinic_id)->name }}
