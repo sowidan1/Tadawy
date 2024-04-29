@@ -290,7 +290,7 @@ use App\Models\Appointment;
                                                         </div>
                                                         <div class="user-progress d-flex align-items-center gap-1">
                                                             <span class="badge bg-label-primary">
-                                                                <span class="fw-semibold d-block mb-1">{{ Doctor::where("clinic_id",$clinic->id)->count() }} Doctor's</span>
+                                                                <span class="fw-semibold d-block mb-1">{{ Doctor::where('clinic_id',$clinic->id)->count() }} Doctor's</span>
                                                             </span>
                                                             <span class="badge bg-label-primary">
                                                                 <span class="fw-semibold d-block mb-1">{{ Appointment::where("clinic_id",$clinic->id)->count() }} Patient's</span>
