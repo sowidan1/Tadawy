@@ -286,7 +286,7 @@ use App\Models\Patient;
                                                     </div>
                                                     <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                                         <div class="me-2">
-                                                            <small class="mb-0">{{ $clinic->name }}</small>
+                                                            <span class="fw-semibold d-block mb-1">{{ $clinic->name }}</span>
                                                         </div>
                                                         <div class="user-progress d-flex align-items-center gap-1">
                                                             <span class="badge bg-label-primary">
