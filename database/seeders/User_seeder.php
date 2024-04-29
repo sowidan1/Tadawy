@@ -17,7 +17,7 @@ class User_seeder extends Seeder
         $admin = [
             'name' => 'Ahmed Mostafa',
             'email' => 'admin@admin.com',
-            'password' => '123456',
+            'password' => bcrypt('123456'),
         ];
 
         \App\Models\User::create($admin);
@@ -62,7 +62,7 @@ class User_seeder extends Seeder
                 'email' => 'noha@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'brain and nerves',
                 'year_of_experience' => '8',
@@ -117,7 +117,7 @@ class User_seeder extends Seeder
                 'email' => 'noha4@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'skin canser',
                 'year_of_experience' => '8',
@@ -172,7 +172,7 @@ class User_seeder extends Seeder
                 'email' => 'noha9@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'dental',
                 'year_of_experience' => '8',
@@ -216,7 +216,7 @@ class User_seeder extends Seeder
                 'email' => 'Khalid13@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'heart and vascular disarases',
                 'year_of_experience' => '8',
@@ -282,7 +282,7 @@ class User_seeder extends Seeder
                 'email' => 'noha19@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'infant incubator',
                 'year_of_experience' => '8',
@@ -337,7 +337,7 @@ class User_seeder extends Seeder
                 'email' => 'noha24@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'breast cancer',
                 'year_of_experience' => '8',
@@ -392,7 +392,7 @@ class User_seeder extends Seeder
                 'email' => 'noha29@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'nose, ear and throat',
                 'year_of_experience' => '8',
@@ -447,7 +447,7 @@ class User_seeder extends Seeder
                 'email' => 'noha34@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'eyes',
                 'year_of_experience' => '8',
@@ -502,7 +502,7 @@ class User_seeder extends Seeder
                 'email' => 'noha40@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'bones',
                 'year_of_experience' => '8',
@@ -557,7 +557,7 @@ class User_seeder extends Seeder
                 'email' => 'noha63@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'emergencies',
                 'year_of_experience' => '8',
@@ -612,7 +612,7 @@ class User_seeder extends Seeder
                 'email' => 'noha68@doctor.com',
                 'password' => bcrypt('123456'),
                 'date_of_birth' => '1990-01-01',
-                'gender' => 'male',
+                'gender' => 'female',
                 'phone' => '01014785236',
                 'specialty' => 'obstetrics and gynecology',
                 'year_of_experience' => '8',
@@ -641,7 +641,7 @@ class User_seeder extends Seeder
         $id = IdGenerator::generate(['table' => 'patients', 'length' => 8, 'prefix' => date('ym')]);
 
         $patients = [
-            [ 
+            [
                 'name'=> 'Hana Mohamed',
                 'phone'=> '01014567890',
                 'date_of_birth' => '1990-01-01',
@@ -649,11 +649,11 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('hana1234'),
                 'email'=> 'hana@patient.com',
                 'photo'=> 'images/pa1.jpg',
-                'doctor_id'=> '6',
-                'clinic_id'=> '1',
+                'doctor_id'=> 6,
+                'clinic_id'=> 1,
                 'id'=> $id,
-            ],
-            [
+            
+            ],[
                 'name'=> 'Mohy Mohamed',
                 'phone'=> '01015151515',
                 'date_of_birth'=> '2000-11-10',
@@ -661,8 +661,8 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('mohy123'),
                 'email'=> 'mohy@patient.com',
                 'photo'=> 'images/pa2.jpg',
-                'doctor_id'=> '5',
-                'clinic_id'=> '5',
+                'doctor_id'=> 5,
+                'clinic_id'=> 5,
                 'id'=> $id,
             ],
             [
@@ -673,11 +673,10 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('shady123'),
                 'email'=> 'shady@patient.com',
                 'photo'=> 'images/pa3.jpg',
-                'doctor_id'=> '1',
-                'clinic_id'=> '2',
+                'doctor_id'=> 1,
+                'clinic_id'=> 2,
                 'id'=> $id,
-            ],
-            [
+            ],[
                 'name'=> 'Reem Mohamed',
                 'phone'=> '01026352415',
                 'date_of_birth'=> '2007-02-10',
@@ -685,11 +684,10 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('reem123'),
                 'email'=> 'reem@patient.com',
                 'photo'=> 'images/pa5.jpg',
-                'doctor_id'=> '1',
-                'clinic_id'=> '2',
+                'doctor_id'=> 1,
+                'clinic_id'=> 2,
                 'id'=> $id,
-            ],
-            [
+            ],[
                 'name'=> 'Abdallah Roshdy',
                 'phone'=> '01125487963',
                 'date_of_birth' => '1980-05-09',
@@ -697,14 +695,16 @@ class User_seeder extends Seeder
                 'password'=> bcrypt('abdallah1234'),
                 'email'=> 'abdallah@patient.com',
                 'photo'=> 'images/pa4.jpg',
-                'doctor_id'=> '4',
-                'clinic_id'=> '3',
+                'doctor_id'=> 4,
+                'clinic_id'=> 3,
                 'id'=> $id,
-            ],
-
+            ]
         ];
             
+        foreach ($patients as $patient) {
 
-        \App\Models\Patient::create($patients);
+            \App\Models\Patient::create($patient);
+
+        }
     }
 }
