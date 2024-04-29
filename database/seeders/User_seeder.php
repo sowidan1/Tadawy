@@ -641,17 +641,69 @@ class User_seeder extends Seeder
         $id = IdGenerator::generate(['table' => 'patients', 'length' => 8, 'prefix' => date('ym')]);
 
         $patients = [
-            'name'=> 'Hana Mohamed',
-            'phone'=> '01014567890',
-            'date_of_birth' => '1990-01-01',
-            'gender'=>'female',
-            'password'=> bcrypt('hana1234'),
-            'email'=> 'hana@patient.com',
-            'photo'=> 'images/pa1.jpg',
-            'doctor_id'=> '6',
-            'clinic_id'=> '1',
-            'id'=> $id,
-            ];
+            [ 
+                'name'=> 'Hana Mohamed',
+                'phone'=> '01014567890',
+                'date_of_birth' => '1990-01-01',
+                'gender'=>'female',
+                'password'=> bcrypt('hana1234'),
+                'email'=> 'hana@patient.com',
+                'photo'=> 'images/pa1.jpg',
+                'doctor_id'=> '6',
+                'clinic_id'=> '1',
+                'id'=> $id,
+            ],
+            [
+                'name'=> 'Mohy Mohamed',
+                'phone'=> '01015151515',
+                'date_of_birth'=> '2000-11-10',
+                'gender'=> 'male',
+                'password'=> bcrypt('mohy123'),
+                'email'=> 'mohy@patient.com',
+                'photo'=> 'images/pa2.jpg',
+                'doctor_id'=> '5',
+                'clinic_id'=> '5',
+                'id'=> $id,
+            ],
+            [
+                'name'=> 'Shady Mohamed',
+                'phone'=> '01014879654',
+                'date_of_birth'=> '2007-02-10',
+                'gender'=> 'male',
+                'password'=> bcrypt('shady123'),
+                'email'=> 'shady@patient.com',
+                'photo'=> 'images/pa3.jpg',
+                'doctor_id'=> '1',
+                'clinic_id'=> '2',
+                'id'=> $id,
+            ],
+            [
+                'name'=> 'Reem Mohamed',
+                'phone'=> '01026352415',
+                'date_of_birth'=> '2007-02-10',
+                'gender'=> 'female',
+                'password'=> bcrypt('reem123'),
+                'email'=> 'reem@patient.com',
+                'photo'=> 'images/pa5.jpg',
+                'doctor_id'=> '1',
+                'clinic_id'=> '2',
+                'id'=> $id,
+            ],
+            [
+                'name'=> 'Abdallah Roshdy',
+                'phone'=> '01125487963',
+                'date_of_birth' => '1980-05-09',
+                'gender'=>'male',
+                'password'=> bcrypt('abdallah1234'),
+                'email'=> 'abdallah@patient.com',
+                'photo'=> 'images/pa4.jpg',
+                'doctor_id'=> '4',
+                'clinic_id'=> '3',
+                'id'=> $id,
+            ],
+
+        ];
+            
 
         \App\Models\Patient::create($patients);
     }
