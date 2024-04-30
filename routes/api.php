@@ -13,6 +13,9 @@ use App\Http\Controllers\Api\XrayController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/infant', [InfantController::class, 'store']);
+Route::post('/heart', [InfantController::class, 'heart_rate']);
+Route::post('/temp', [InfantController::class, 'temp']);
+
 Route::get('/get-data', [InfantController::class, 'getData']);
 
 
