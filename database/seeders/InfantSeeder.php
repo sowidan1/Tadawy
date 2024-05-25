@@ -14,18 +14,22 @@ class InfantSeeder extends Seeder
     {
         $colorSensor = [
             'image' => 'images/infant/baby.gif',
+            'color_sensor' => 'Jaundice',
         ];
 
         $heart_rate = [
             'image' => 'images/infant/heartRate.gif',
+            'heart_rate' => '120 bpm',
         ];
 
         $temperature = [
             'image' => 'images/infant/thermometer.gif',
+            'temperature' => '37.5 °C',
         ];
 
         $humidity = [
             'image' => 'images/infant/Humidity.gif',
+            'humidity' => '50',
         ];
 
         \App\Models\Color_sensor::create($colorSensor);
