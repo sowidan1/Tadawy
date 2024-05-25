@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             User_seeder::class,
             Test_seeder::class,
             Xray_seeder::class,
+            InfantSeeder::class,
         ]);
     }
 }

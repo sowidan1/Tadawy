@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class InfantRequest extends FormRequest
+class ColorSensorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,6 @@ class InfantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 'temperature' => 'required',
-            // 'humidity' => 'required',
-            // 'heart_Rate' => 'required',
             'color_sensor' => 'required|in:Jaundice,Not_jaundice',
         ];
     }

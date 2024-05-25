@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('infants', function (Blueprint $table) {
+        Schema::create('humidities', function (Blueprint $table) {
             $table->id();
-            // $table->string('temperature');
-            // $table->string('humidity');
-            // $table->string('heart_Rate');
-            $table->enum('color_sensor', ['Jaundice', 'Not_jaundice']);
-
+            $table->string('image')->nullable();
+            $table->float('humidity')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('infants');
+        Schema::dropIfExists('humidities');
     }
 };

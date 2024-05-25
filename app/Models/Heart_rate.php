@@ -11,5 +11,6 @@ class Heart_rate extends Model
 
     protected $fillable = [
         'heart_rate',
+        'image'
     ];
 }
