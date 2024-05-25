@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('temps', function (Blueprint $table) {
+        Schema::create('color_sensors', function (Blueprint $table) {
             $table->id();
-            $table->string('temperature')->nullable();
             $table->string('image')->nullable();
+            $table->enum('color_sensor', ['Jaundice', 'Not_jaundice'])->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('temps');
+        Schema::dropIfExists('color_sensors');
     }
 };

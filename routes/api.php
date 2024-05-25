@@ -12,11 +12,12 @@ use App\Http\Controllers\Api\TestController;
 use App\Http\Controllers\Api\XrayController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/infant', [InfantController::class, 'store']);
-Route::post('/heart', [InfantController::class, 'heart_rate']);
-Route::post('/temp', [InfantController::class, 'temp']);
+Route::post('/color-sensor', [InfantController::class, 'colorSensor']);
+Route::post('/heart-rate', [InfantController::class, 'heartRate']);
+Route::post('/temperature', [InfantController::class, 'temperature']);
+Route::post('/humidity', [InfantController::class, 'humidity']);
 
-Route::get('/get-data', [InfantController::class, 'getData']);
+Route::get('/infant', [InfantController::class, 'index']);
 
 
 
@@ -34,7 +35,7 @@ Route::group(['middleware' => ['auth:sanctum', 'limit.request']], function () {
 
 
     Route::get('/all-patient', [DoctorController::class, 'patients']);
-        
+
 
 
     Route::prefix('fitness')->group(function () {
@@ -69,7 +70,7 @@ Route::group(['middleware' => ['auth:sanctum', 'limit.request']], function () {
         Route::post('/book', [XrayController::class, 'bookXray']);
     });
 
-   
+
 
     Route::prefix('EHR')->group(function () {
 

@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('heart_rates', function (Blueprint $table) {
             $table->id();
-            $table->string('heart_rate');
+            $table->string('heart_rate')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
