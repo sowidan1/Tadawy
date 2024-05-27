@@ -75,34 +75,98 @@ class InfantController extends Controller
     }
 
     public function index()
-    {
-        $colorSensor = DB::table('color_sensors')
-            ->select('color_sensors.image', 'color_sensors.color_sensor', DB::raw("'Color Sensor' as table_name"))
-            ->latest()
-            ->first();
-        $heartRate = DB::table('heart_rates')
-            ->select('heart_rates.heart_rate', 'heart_rates.image', DB::raw("'Heart Rate' as table_name"))
-            ->latest()
-            ->first();
+{
+    // Fetch and combine color sensor data
+    $latestColorSensor = DB::table('color_sensors')
+        ->select('color_sensors.color_sensor as result', DB::raw("'Color Sensor' as table_name"))
+        ->latest('created_at')
+        ->first();
 
-        $temperature = DB::table('temps')
-            ->select('temps.temperature', 'temps.image', DB::raw("'temperature' as table_name"))
-            ->latest()
-            ->first();
+    $colorSensorImage = DB::table('color_sensors')
+        ->select('image')
+        ->where('id', 1)
+        ->first();
 
-        $humidity = DB::table('humidities')
-            ->select('humidities.humidity', 'humidities.image', DB::raw("'humidity' as table_name"))
-            ->latest()
-            ->first();
-
-        $response = [
-            'color_sensor' => $colorSensor,
-            'heart_rate' => $heartRate,
-            'temperature' => $temperature,
-            'humidity' => $humidity,
-            'status' => 200
+    $colorSensor = null;
+    if ($latestColorSensor) {
+        $colorSensor = [
+            'result' => $latestColorSensor->result,
+            'table_name' => $latestColorSensor->table_name,
+            'image' => $colorSensorImage ? $colorSensorImage->image : null
         ];
-
-        return $response;
     }
+
+    // Fetch and combine heart rate data
+    $latestHeartRate = DB::table('heart_rates')
+        ->select('heart_rates.heart_rate as result', DB::raw("'Heart Rate' as table_name"))
+        ->latest('created_at')
+        ->first();
+
+    $heartRateImage = DB::table('heart_rates')
+        ->select('image')
+        ->where('id', 1)
+        ->first();
+
+    $heartRate = null;
+    if ($latestHeartRate) {
+        $heartRate = [
+            'result' => $latestHeartRate->result,
+            'table_name' => $latestHeartRate->table_name,
+            'image' => $heartRateImage ? $heartRateImage->image : null
+        ];
+    }
+
+    // Fetch and combine temperature data
+    $latestTemperature = DB::table('temps')
+        ->select('temps.temperature as result', DB::raw("'Temperature' as table_name"))
+        ->latest('created_at')
+        ->first();
+
+    $temperatureImage = DB::table('temps')
+        ->select('image')
+        ->where('id', 1)
+        ->first();
+
+    $temperature = null;
+    if ($latestTemperature) {
+        $temperature = [
+            'result' => $latestTemperature->result,
+            'table_name' => $latestTemperature->table_name,
+            'image' => $temperatureImage ? $temperatureImage->image : null
+        ];
+    }
+
+    // Fetch and combine humidity data
+    $latestHumidity = DB::table('humidities')
+        ->select('humidities.humidity as result', DB::raw("'Humidity' as table_name"))
+        ->latest('created_at')
+        ->first();
+
+    $humidityImage = DB::table('humidities')
+        ->select('image')
+        ->where('id', 1)
+        ->first();
+
+    $humidity = null;
+    if ($latestHumidity) {
+        $humidity = [
+            'result' => $latestHumidity->result,
+            'table_name' => $latestHumidity->table_name,
+            'image' => $humidityImage ? $humidityImage->image : null
+        ];
+    }
+
+    // Combine all data into the response
+    $response = [
+        'color_sensor' => $colorSensor,
+        'heart_rate' => $heartRate,
+        'temperature' => $temperature,
+        'humidity' => $humidity,
+        'status' => 200
+    ];
+
+    return response()->json($response);
+}
+
+
 }
