@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Ehr;
-use Illuminate\Support\Facades\File;
+
 
 use Illuminate\Http\Request;
 
 class EhrController extends Controller
 {
+
     public function store(Request $request)
     {
         $request->validate([
@@ -17,37 +18,14 @@ class EhrController extends Controller
             'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
         ]);
 
-        // Store the file in storage/app/ehr
         $data = $request->file('data')->store('ehr');
 
-        // Get the original filename
-        $originalName = $request->file('data')->getClientOriginalName();
-
-        // Ensure the public/ehr directory exists
-        $publicEhrPath = public_path('ehr');
-        if (!File::exists($publicEhrPath)) {
-            File::makeDirectory($publicEhrPath, 0755, true);
-        }
-
-        // Store the file in public/ehr
-        $publicPath = 'public/ehr/' . $originalName;
-        try {
-            $request->file('data')->move($publicEhrPath, $originalName);
-        } catch (\Exception $e) {
-            return response()->json([
-                'message' => 'Unable to write in the "/app/public/ehr" directory.',
-                'exception' => $e->getMessage()
-            ], 500);
-        }
-
-        // Create the EHR record
         $file = Ehr::create([
-            'name' => $originalName,
-            'path' => $data,  // This path is in storage/app/ehr
+            'name' => $request->file('data')->getClientOriginalName(),
+            'path' => $data,
             'patient_id' => $request->patient_id,
         ]);
 
-        // Prepare the response
         $response = [
             'message' => 'EHR created',
             'data' => $file,
@@ -55,29 +33,6 @@ class EhrController extends Controller
 
         return response($response, 201);
     }
-
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'patient_id' => 'required|exists:patients,id',
-    //         'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
-    //     ]);
-
-    //     $data = $request->file('data')->store('ehr');
-
-    //     $file = Ehr::create([
-    //         'name' => $request->file('data')->getClientOriginalName(),
-    //         'path' => $data,
-    //         'patient_id' => $request->patient_id,
-    //     ]);
-
-    //     $response = [
-    //         'message' => 'EHR created',
-    //         'data' => $file,
-    //     ];
-
-    //     return response($response, 201);
-    // }
 
     public function download($id)
     {
