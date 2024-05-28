@@ -9,27 +9,59 @@ use Illuminate\Http\Request;
 class EhrController extends Controller
 {
     public function store(Request $request)
-    {
-        $request->validate([
-            'patient_id' => 'required|exists:patients,id',
-            'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
-        ]);
+{
+    $request->validate([
+        'patient_id' => 'required|exists:patients,id',
+        'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
+    ]);
 
-        $data = $request->file('data')->store('ehr');
+    // Store the file in storage/app/ehr
+    $data = $request->file('data')->store('ehr');
 
-        $file = Ehr::create([
-            'name' => $request->file('data')->getClientOriginalName(),
-            'path' => $data,
-            'patient_id' => $request->patient_id,
-        ]);
+    // Get the original filename
+    $originalName = $request->file('data')->getClientOriginalName();
 
-        $response = [
-            'message' => 'EHR created',
-            'data' => $file,
-        ];
+    // Store the file in public/ehr
+    $publicPath = 'public/ehr/' . $originalName;
+    $request->file('data')->move(public_path('ehr'), $originalName);
 
-        return response($response, 201);
-    }
+    // Create the EHR record
+    $file = Ehr::create([
+        'name' => $originalName,
+        'path' => $data,  // This path is in storage/app/ehr
+        'patient_id' => $request->patient_id,
+    ]);
+
+    // Prepare the response
+    $response = [
+        'message' => 'EHR created',
+        'data' => $file,
+    ];
+
+    return response($response, 201);
+}
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'patient_id' => 'required|exists:patients,id',
+    //         'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
+    //     ]);
+
+    //     $data = $request->file('data')->store('ehr');
+
+    //     $file = Ehr::create([
+    //         'name' => $request->file('data')->getClientOriginalName(),
+    //         'path' => $data,
+    //         'patient_id' => $request->patient_id,
+    //     ]);
+
+    //     $response = [
+    //         'message' => 'EHR created',
+    //         'data' => $file,
+    //     ];
+
+    //     return response($response, 201);
+    // }
 
     public function download($id)
     {
@@ -43,6 +75,6 @@ class EhrController extends Controller
         $ehr = Ehr::where('patient_id', $patient_id)->get();
 
         return response()->json($ehr);
-        
+
     }
 }
