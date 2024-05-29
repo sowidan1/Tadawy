@@ -12,27 +12,51 @@ class EhrController extends Controller
 {
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'patient_id' => 'required|exists:patients,id',
-            'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
-        ]);
+{
+    $request->validate([
+        'patient_id' => 'required|exists:patients,id',
+        'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
+    ]);
 
-        $data = $request->file('data')->store('ehr');
+    // Store the file in the 'ehr' directory in the 'public' disk
+    $dataPath = $request->file('data')->store('ehr', 'public');
 
-        $file = Ehr::create([
-            'name' => $request->file('data')->getClientOriginalName(),
-            'path' => $data,
-            'patient_id' => $request->patient_id,
-        ]);
+    // Create the EHR entry with the file path
+    $file = Ehr::create([
+        'name' => $request->file('data')->getClientOriginalName(),
+        'path' => $dataPath,
+        'patient_id' => $request->patient_id,
+    ]);
 
-        $response = [
-            'message' => 'EHR created',
-            'data' => $file,
-        ];
+    $response = [
+        'message' => 'EHR created',
+        'data' => $file,
+    ];
 
-        return response($response, 201);
-    }
+    return response($response, 201);
+}
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'patient_id' => 'required|exists:patients,id',
+    //         'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
+    //     ]);
+
+    //     $data = $request->file('data')->store('ehr');
+
+    //     $file = Ehr::create([
+    //         'name' => $request->file('data')->getClientOriginalName(),
+    //         'path' => $data,
+    //         'patient_id' => $request->patient_id,
+    //     ]);
+
+    //     $response = [
+    //         'message' => 'EHR created',
+    //         'data' => $file,
+    //     ];
+
+    //     return response($response, 201);
+    // }
 
     public function download($id)
     {
