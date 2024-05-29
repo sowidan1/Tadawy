@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Ehr;
-
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+
+
 
 class EhrController extends Controller
 {
@@ -18,22 +19,37 @@ class EhrController extends Controller
         'data' => 'required|file|max:10240|mimes:pdf,doc,docx,jpg,jpeg,png',
     ]);
 
-    // Store the file in the 'ehr' directory in the 'public' disk
-    $dataPath = $request->file('data')->store('ehr', 'public');
+    // Prepare the file for upload
+    $file = $request->file('data');
+    $filePath = $file->getPathname();
+    $fileName = $file->getClientOriginalName();
+    $fileMimeType = $file->getMimeType();
 
-    // Create the EHR entry with the file path
-    $file = Ehr::create([
-        'name' => $request->file('data')->getClientOriginalName(),
-        'path' => $dataPath,
-        'patient_id' => $request->patient_id,
-    ]);
+    // Upload the file to the external server
+    $response = Http::attach(
+        'data', file_get_contents($filePath), $fileName
+    )->post('https://tadawy-production.up.railway.app/ehr');
 
-    $response = [
-        'message' => 'EHR created',
-        'data' => $file,
-    ];
+    if ($response->successful()) {
+        // Assume the response contains the URL to the uploaded file
+        $dataUrl = $response->json()['url'];
 
-    return response($response, 201);
+        // Create the EHR entry with the URL path
+        $file = Ehr::create([
+            'name' => $fileName,
+            'path' => $dataUrl,
+            'patient_id' => $request->patient_id,
+        ]);
+
+        $response = [
+            'message' => 'EHR created',
+            'data' => $file,
+        ];
+
+        return response($response, 201);
+    } else {
+        return response(['message' => 'Failed to upload file'], 500);
+    }
 }
     // public function store(Request $request)
     // {
