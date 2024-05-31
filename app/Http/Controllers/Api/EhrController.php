@@ -102,4 +102,11 @@ public function showFile($id)
         return response()->json($ehr);
 
     }
+
+    public function destroy($id){
+
+        $ehr = Ehr::findOrFail($id);
+        $ehr->delete();
+        return response()->json(['message' => 'EHR deleted successfully']);
+    }
 }

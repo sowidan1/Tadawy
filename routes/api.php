@@ -78,6 +78,7 @@ Route::group(['middleware' => ['auth:sanctum', 'limit.request']], function () {
         Route::get('/show/{id}', [EhrController::class, 'download']);
         Route::get('/all/{patient_id}', [EhrController::class, 'showEhrByPatientId']);
         Route::get('/show-file/{id}', [EhrController::class, 'showFile']);
+        Route::post('/delete/{id}', [EhrController::class, 'destroy']);
 
     });
 
